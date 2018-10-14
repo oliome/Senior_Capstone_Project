@@ -1,0 +1,67 @@
+#:import Factory kivy.factory.Factory
+RootWidget:
+
+<RootWidget>:
+	screen_manager: screen_manager
+	ScreenManager:
+		id: screen_manager
+		current: 'main_menu'
+		pos: root.pos
+		size: root.size
+		MainMenu:
+			screen_manager: root
+			size: root.size
+			pos: root.pos
+		OtherMenu:
+			screen_manager: root
+			size: root.size
+			pos: root.pos
+    
+<MainMenu>:
+	screen_manager: self.screen_manager
+	GridLayout:
+		id: profilescene
+		cols: 1
+	Button:
+		id: profilebutton
+		text: 'New Profile +'
+		font_size: 14
+		on_press: Factory.MyPopup().open()
+<MyPopup@Popup>:
+	id: popup
+	title: 'What is your name?'
+	title_align: 'center'
+	auto_dismiss: False
+	content: box
+	size_hint: (None, None)
+	size: (400, 100)
+	
+	BoxLayout:
+		id: box
+		TextInput:
+			id: textinput
+			multiline: False
+			ont_size: 24
+			on_text_validate: root.Create_Click
+		Button: 
+			id: createButton
+			text: 'Create Profile'
+			size_hint: (.5, 1)
+			on_press: root.dismiss()
+			on_press: app.Create_Click
+		Button: 
+			id: cancelButton
+			text: 'Cancel'
+			size_hint: (.3, 1)
+			on_press: root.dismiss()
+
+	
+
+<OtherMenu>:
+	screen_manager: self.screen_manager
+	FloatLayout:
+	Button:
+		text: 'Other'
+		size_hint: (.4, .2)
+		pos_hint: {'x': .3, 'y': .4}
+		on_press: root.screen_manager.set_state(root.name)
