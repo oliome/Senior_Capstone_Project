@@ -4,6 +4,7 @@ kivy.require('1.10.0') # replace with your current kivy version !
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.popup import Popup
@@ -54,6 +55,17 @@ class MyApp(App):
 		self.title = 'Gro-Log'
 		return LoginScreen()
 
+'''
+class containing code to build the dbscreen. remove triple quotes to run 
+class DatabaseScreen(App):
+
+	def build(self):
+		return FloatLayout()
+
+
+dbScreen = DatabaseScreen()
+dbScreen.run()
+'''
 
 if __name__ == '__main__':
     MyApp().run()
