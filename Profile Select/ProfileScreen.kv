@@ -1,0 +1,42 @@
+#: import main ProfileScreen
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
+ProfileDB:
+
+<ProfileDB>:
+    orientation: "vertical"
+    profile_name_text_input: profile_name
+    profile_list: profile_list_view
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        size_hint_y: None
+        height: "30dp"
+
+        Label:
+            text: "Enter Profile Name:"
+        TextInput:
+            id: profile_name
+
+    BoxLayout:
+        size_hint_y: None
+        height: "100dp"
+        Button:
+            text: "Create Profile"
+            size_hint_x: 15
+            on_press: root.create_profile()
+        Button:
+            text: "Delete"
+            size_hint_x: 15
+            on_press: root.delete_profile()
+        Button:
+            text: "Replace"
+            size_hint_x: 15
+            on_press: root.replace_profile()
+
+    ListView:
+        id: profile_list_view
+        adapter:
+            ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)

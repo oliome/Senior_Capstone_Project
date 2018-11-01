@@ -2,8 +2,9 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
 from kivy.properties import ListProperty, ObjectProperty
+from kivy.uix.listview import ListView
 from random import shuffle
-my_list = ['New Profile +']
+my_list = ['Add New Profile']
 
 
 Builder.load_string('''
@@ -21,7 +22,7 @@ Builder.load_string('''
                 orientation: "horizontal"
                 id: box2
             Button:
-                text: "New Profile +"
+                text: "Add New Profile"
                 on_release:
                     root.current = "screen1"
 
@@ -83,6 +84,7 @@ Builder.load_string('''
                 pos_hint: {"top": 1}
                 font_size: 16
                 color: 0, 0, 0, 1
+                on_press: root.current = "screen2"
                 background_normal: 'grey.jpg'
                 background_down: ''
                 background_color: .88, .88, .88, 1
