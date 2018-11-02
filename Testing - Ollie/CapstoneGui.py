@@ -10,19 +10,24 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.boxlayout import BoxLayout
 
-class LoginScreen(GridLayout):
+class ProfileScreen(GridLayout):
 	def __init__(self, **kwargs):
-		super(LoginScreen, self).__init__(**kwargs)
+		super(ProfileScreen, self).__init__(**kwargs)
 		self.cols = 1
 
-		self.newProfile = (Button(text='New Profile +', font_size=14)) #creates button w/ text
+		self.newProfile = (Button(text='Add New Profile', font_size=14)) #creates button w/ text
 		self.add_widget(self.newProfile)
 		self.newProfile.bind(on_press=self.newProfile_Click)
 
 	def newProfile_Click(self,instance):
 		box = BoxLayout()
 
-		self.popup = Popup(title='What is your name?',title_align='center',auto_dismiss=False, content=box,size_hint=(None, None), size=(400, 100))
+		self.popup = Popup(title='What is your name?',
+						   title_align='center',
+						   auto_dismiss=False,
+						   content=box,
+						   size_hint=(None, None),
+						   size=(400, 100))
 
 
 		self.text = (TextInput(multiline=False, font_size=24))
@@ -58,13 +63,14 @@ class LoginScreen(GridLayout):
 class MyApp(App):
 
 	def build(self):
-		self.title = 'Gro-Log'
-		return LoginScreen()
+		self.title = 'Select User Profile'
+		return ProfileScreen()
 
 
 class DatabaseScreen(App):
 
 	def build(self):
+		self.title = "Your Grocery Inventory"
 		return FloatLayout()
 
 

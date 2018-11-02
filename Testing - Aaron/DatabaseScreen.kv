@@ -1,0 +1,51 @@
+<BigButton@Button>:
+    font_size: 32
+    color: 0, 0, 0, 1
+
+    background_normal: 'grey.jpg'
+    background_down: ''
+    background_color: .88, .88, .88, 1
+    size_hint: .7, .7
+
+<MiniButton@Button>:
+    font_size: 16
+    color: 0, 0, 0, 1
+
+    background_normal: 'grey.jpg'
+    background_down: ''
+    background_color: .88, .88, .88, 1
+    size_hint: .1, .1
+
+<StandardButton@Button>:
+    font_size: 16
+    color: 0, 0, 0, 1
+
+    background_normal: 'grey.jpg'
+    background_down: ''
+    background_color: .88, .88, .88, 1
+    size_hint: .2, .1
+
+<FloatLayout>:
+    MiniButton:
+        text: "Back"
+        pos_hint: {"top": 1}
+
+    StandardButton:
+        text: "Your Grocery Inventory"
+        pos_hint: {"center_x": .5, "top": 1}
+
+    MiniButton:
+        text: "Delete"
+        pos_hint: {"center_x": .2 , "center_y": .1}
+
+    StandardButton:
+        text: "Search Recipes"
+        pos_hint: {"center_x": .38, "center_y": .1}
+
+    MiniButton:
+        text: "Add"
+        pos_hint: {"center_x": .56, "center_y": .1}
+
+    BigButton:
+        text: "Database Table Here"
+        pos_hint: {"center_x": .5, "center_y": .5}
