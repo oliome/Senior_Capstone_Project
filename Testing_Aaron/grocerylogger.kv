@@ -1,0 +1,118 @@
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+#: import ScreenManager kivy.uix.screenmanager.ScreenManager
+#: import Screen kivy.uix.screenmanager.ScreenManager
+#: import ProfileScreen screen
+#: import InventoryScreen screen
+#: import main GroceryLoggerApp
+
+ScreenManager:
+    id: screen_manager
+    ProfileScreen:
+        id: profile_screen
+        name: 'ProfileScreen'
+        manager: 'screen_manager'
+    InventoryScreen:
+        id: inventory_screen
+        name: 'InventoryScreen'
+        manager: 'screen_manager'
+
+
+
+<ProfileScreen>:
+    orientation: "vertical"
+    profile_name_text_input: profile_name
+    profile_list: profile_list_view
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        size_hint_y: None
+        height: "30dp"
+
+        Label:
+            text: "Enter Profile Name:"
+        TextInput:
+            id: profile_name
+
+    BoxLayout:
+        size_hint_y: None
+        height: "100dp"
+        Button:
+            text: "Create Profile"
+            size_hint_x: 15
+            on_press: root.create_profile()
+        Button:
+            text: "Delete"
+            size_hint_x: 15
+            on_press: root.delete_profile()
+        Button:
+            text: "Inventory"
+            size_hint_x: 15
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 1
+                root.manager.current = 'inventory_screen'
+
+    ListView:
+        id: profile_list_view
+        adapter:
+            ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
+
+
+<BigButton@Button>:
+    font_size: 32
+    color: 0, 0, 0, 1
+
+    background_normal: 'grey.jpg'
+    background_down: ''
+    background_color: .88, .88, .88, 1
+    size_hint: .7, .7
+
+<MiniButton@Button>:
+    font_size: 16
+    color: 0, 0, 0, 1
+
+    background_normal: 'grey.jpg'
+    background_down: ''
+    background_color: .88, .88, .88, 1
+    size_hint: .1, .1
+
+<StandardButton@Button>:
+    font_size: 16
+    color: 0, 0, 0, 1
+
+    background_normal: 'grey.jpg'
+    background_down: ''
+    background_color: .88, .88, .88, 1
+    size_hint: .2, .1
+
+<InventoryScreen>:
+    FloatLayout:
+        MiniButton:
+            text: "Back"
+            pos_hint: {"top": 1}
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 1
+                root.manager.current = 'profile_screen'
+
+        StandardButton:
+            text: "Your Grocery Inventory"
+            pos_hint: {"center_x": .5, "top": 1}
+
+        MiniButton:
+            text: "Delete"
+            pos_hint: {"center_x": .2 , "center_y": .1}
+
+        StandardButton:
+            text: "Search Recipes"
+            pos_hint: {"center_x": .38, "center_y": .1}
+
+        MiniButton:
+            text: "Add"
+            pos_hint: {"center_x": .56, "center_y": .1}
+
+        BigButton:
+            text: "Database Table Here"
+            pos_hint: {"center_x": .5, "center_y": .5}

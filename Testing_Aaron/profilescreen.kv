@@ -2,7 +2,7 @@
 #: import ListAdapter kivy.adapters.listadapter.ListAdapter
 #: import ListItemButton kivy.uix.listview.ListItemButton
 
-ProfileDB:
+ProfileScreen:
 
 <ProfileDB>:
     orientation: "vertical"
@@ -31,6 +31,13 @@ ProfileDB:
             text: "Delete"
             size_hint_x: 15
             on_press: root.delete_profile()
+        Button:
+            text: "Inventory"
+            size_hint_x: 15
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 1
+                root.manager.current = 'inventory_screen'
 
     ListView:
         id: profile_list_view

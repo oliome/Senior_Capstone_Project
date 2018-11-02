@@ -67,14 +67,14 @@ class MyApp(App):
 		return ProfileScreen()
 
 
-class DatabaseScreen(App):
+#class DatabaseScreen(App):
+#
+#	def build(self):
+#		self.title = "Your Grocery Inventory"
+#		return FloatLayout()
 
-	def build(self):
-		self.title = "Your Grocery Inventory"
-		return FloatLayout()
 
-
-dbScreen = DatabaseScreen()
+#dbScreen = DatabaseScreen()
 #dbScreen.run()
 
 if __name__ == '__main__':

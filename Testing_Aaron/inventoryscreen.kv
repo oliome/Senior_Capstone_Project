@@ -1,3 +1,9 @@
+#: import main ProfileScreen
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
+InventoryScreen:
+
 <BigButton@Button>:
     font_size: 32
     color: 0, 0, 0, 1
@@ -29,6 +35,10 @@
     MiniButton:
         text: "Back"
         pos_hint: {"top": 1}
+        on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 1
+                root.manager.current = 'profile_screen
 
     StandardButton:
         text: "Your Grocery Inventory"
