@@ -4,13 +4,9 @@ from kivy.properties import ObjectProperty
 from kivy.uix.listview import ListItemButton
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-
-
-#buildKV = Builder.load_file("grocerylogger.kv")
-
-
-#class ProfileScreen(Screen):
- #   pass
+from kivy.adapters.listadapter import ListAdapter
+from kivy.uix.listview import ListItemButton
+from kivy.properties import StringProperty
 
 
 class InventoryScreen(Screen):
@@ -18,7 +14,6 @@ class InventoryScreen(Screen):
 
 
 screen_manager = ScreenManager()
-
 
 
 class ProfileListButton(ListItemButton):
@@ -56,6 +51,8 @@ class ProfileScreen(Screen):
             # Reset the ListView
             self.profile_list._trigger_reset_populate()
 
+#Builder.load_("")
+
 
 screen_manager.add_widget(ProfileScreen(name="profile_screen"))
 screen_manager.add_widget(InventoryScreen(name="inventory_screen"))
@@ -63,7 +60,7 @@ screen_manager.add_widget(InventoryScreen(name="inventory_screen"))
 
 class GroceryLoggerApp(App):
     def build(self):
-        return screen_manager
+        return InventoryScreen()
 
 
 my_app = GroceryLoggerApp()

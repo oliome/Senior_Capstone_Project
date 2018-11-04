@@ -6,16 +6,6 @@
 #: import InventoryScreen screen
 #: import main GroceryLoggerApp
 
-ScreenManager:
-    id: screen_manager
-    ProfileScreen:
-        id: profile_screen
-        name: 'ProfileScreen'
-        manager: 'screen_manager'
-    InventoryScreen:
-        id: inventory_screen
-        name: 'InventoryScreen'
-        manager: 'screen_manager'
 
 
 
@@ -50,9 +40,7 @@ ScreenManager:
             text: "Inventory"
             size_hint_x: 15
             on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.transition.duration = 1
-                root.manager.current = 'inventory_screen'
+                root.screen_manager.current = "inventory_screen"
 
     ListView:
         id: profile_list_view
@@ -93,13 +81,12 @@ ScreenManager:
             text: "Back"
             pos_hint: {"top": 1}
             on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.transition.duration = 1
-                root.manager.current = 'profile_screen'
+                app.root.current = "profile_screen"
 
         StandardButton:
             text: "Your Grocery Inventory"
             pos_hint: {"center_x": .5, "top": 1}
+
 
         MiniButton:
             text: "Delete"
@@ -116,3 +103,7 @@ ScreenManager:
         BigButton:
             text: "Database Table Here"
             pos_hint: {"center_x": .5, "center_y": .5}
+            ListView:
+                id: profile_list_view
+                adapter:
+                    ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
