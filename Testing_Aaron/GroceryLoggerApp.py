@@ -13,7 +13,7 @@ class InventoryScreen(Screen):
     pass
 
 
-screen_manager = ScreenManager()
+
 
 
 class ProfileListButton(ListItemButton):
@@ -51,16 +51,17 @@ class ProfileScreen(Screen):
             # Reset the ListView
             self.profile_list._trigger_reset_populate()
 
-#Builder.load_("")
 
 
-screen_manager.add_widget(ProfileScreen(name="profile_screen"))
-screen_manager.add_widget(InventoryScreen(name="inventory_screen"))
+
 
 
 class GroceryLoggerApp(App):
     def build(self):
-        return InventoryScreen()
+        screen_manager = ScreenManager()
+        #screen_manager.add_widget(ProfileScreen(name="profile_screen"))
+        screen_manager.add_widget(InventoryScreen(name="inventory_screen"))
+        return screen_manager
 
 
 my_app = GroceryLoggerApp()

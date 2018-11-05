@@ -87,6 +87,27 @@
             text: "Your Grocery Inventory"
             pos_hint: {"center_x": .5, "top": 1}
 
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_x: '.9'
+            size_hint_y: '7'
+            height: .5
+            padding: [100,80,80,100]
+
+
+            ListView:
+                size_hint: .8,.1
+                id: profile_list_view
+                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","item3","item4","item5","item6",], cls=main.ProfileListButton)
+            ListView:
+                size_hint: .8,.1
+                id: profile_list_view
+                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","item3","item4","item5","item6",], cls=main.ProfileListButton)
+            ListView:
+                size_hint: .8,.1
+                id: profile_list_view
+                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","item3","item4","item5","item6",], cls=main.ProfileListButton)
+
 
         MiniButton:
             text: "Delete"
@@ -100,10 +121,5 @@
             text: "Add"
             pos_hint: {"center_x": .56, "center_y": .1}
 
-        BigButton:
-            text: "Database Table Here"
-            pos_hint: {"center_x": .5, "center_y": .5}
-            ListView:
-                id: profile_list_view
-                adapter:
-                    ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
+
+

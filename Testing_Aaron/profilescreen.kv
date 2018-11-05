@@ -6,40 +6,47 @@ ProfileScreen:
 
 <ProfileDB>:
     orientation: "vertical"
-    profile_name_text_input: profile_name
-    profile_list: profile_list_view
     padding: 10
     spacing: 10
 
-    BoxLayout:
-        size_hint_y: None
-        height: "30dp"
 
-        Label:
-            text: "Enter Profile Name:"
-        TextInput:
-            id: profile_name
+    GridLayout:
+        cols: 3
 
-    BoxLayout:
-        size_hint_y: None
-        height: "100dp"
-        Button:
-            text: "Create Profile"
-            size_hint_x: 15
-            on_press: root.create_profile()
-        Button:
-            text: "Delete"
-            size_hint_x: 15
-            on_press: root.delete_profile()
-        Button:
-            text: "Inventory"
-            size_hint_x: 15
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.transition.duration = 1
-                root.manager.current = 'inventory_screen'
 
-    ListView:
-        id: profile_list_view
-        adapter:
-            ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
+
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: "100dp"
+            Button:
+                text: "Item Name"
+                on_press: root.create_profile()
+            ListView:
+                id: profile_list_view
+                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken"], cls=main.ProfileListButton)
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: "100dp"
+            Button:
+                text: "Expiration Date"
+
+                on_press: root.create_profile()
+            ListView:
+                id: profile_list_view
+                adapter: ListAdapter(data=["12/25/2018","1/12/2018"], cls=main.ProfileListButton)
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: "100dp"
+            Button:
+                text: "Barcode/UPC Number"
+
+                on_press: root.create_profile()
+            ListView:
+                id: profile_list_view
+                adapter: ListAdapter(data=["078742022871","023700051172"], cls=main.ProfileListButton)

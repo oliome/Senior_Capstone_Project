@@ -59,3 +59,39 @@ InventoryScreen:
     BigButton:
         text: "Database Table Here"
         pos_hint: {"center_x": .5, "center_y": .5}
+        GridLayout:
+        cols: 3
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: "100dp"
+                Button:
+                    text: "Item Name"
+                    on_press: root.create_profile()
+                ListView:
+                    id: profile_list_view
+                    adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken"], cls=main.ProfileListButton)
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: "100dp"
+                Button:
+                    text: "Expiration Date"
+
+                    on_press: root.create_profile()
+                ListView:
+                    id: profile_list_view
+                    adapter: ListAdapter(data=["12/25/2018","1/12/2018"], cls=main.ProfileListButton)
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: "100dp"
+                Button:
+                    text: "Barcode/UPC Number"
+
+                    on_press: root.create_profile()
+                ListView:
+                    id: profile_list_view
+                    adapter: ListAdapter(data=["078742022871","023700051172"], cls=main.ProfileListButton)

@@ -62,6 +62,7 @@ class ProfileDB(BoxLayout):
 
 class ProfileScreen(App):
     def build(self):
+        self.title = 'Profile Select'
         return ProfileDB()
 
 
