@@ -2,57 +2,7 @@
 #: import ListItemButton kivy.uix.listview.ListItemButton
 #: import ScreenManager kivy.uix.screenmanager.ScreenManager
 #: import Screen kivy.uix.screenmanager.ScreenManager
-#: import ProfileScreen screen
-#: import InventoryScreen screen
 #: import main GroceryLoggerApp
-
-
-
-
-<ProfileScreen>:
-
-    orientation: "horizontal"
-    profile_name_text_input: profile_name
-    profile_list: profile_list_view
-    padding: 10
-    spacing: 10
-
-    BoxLayout:
-        size_hint: .8,.055
-
-        pos_hint: {"top": .98}
-        Label:
-            text: "Enter Profile Name:"
-        TextInput:
-            id: profile_name
-
-    BoxLayout:
-        size_hint_y: .1
-        pos_hint: {"top": .9}
-        Button:
-            text: "Create Profile"
-            size_hint_x: 15
-            on_press: root.create_profile()
-        Button:
-            text: "Delete"
-            size_hint_x: 15
-            on_press: root.delete_profile()
-        Button:
-            text: "View Inventory"
-            size_hint_x: 15
-            on_press:
-                app.root.transition.direction = "left"
-                app.root.current = "inventory_screen"
-
-    GridLayout:
-        cols: 1
-        pos_hint: {"top": .8}
-        #padding: [100,0,100,100]
-        ListView:
-            id: profile_list_view
-            adapter:
-                ListAdapter(data=["Zack","Ollie","Rehan","Aaron","name","name","name","name","name","name","name","name","name","name"], cls=main.ProfileListButton)
-
 
 <BigButton@Button>:
     font_size: 16
@@ -76,6 +26,80 @@
     #background_color: .88, .88, .88, 1
     size_hint: .2, .1
 
+#############################################################################
+<ProfileScreen>:
+
+    BigButton:
+        text: "Profile Select"
+        pos_hint: {"center_x": .5, "top": 1}
+
+    BoxLayout:
+        orientation: "horizontal"
+        profile_name_text_input: profile_name
+        profile_list: profile_list_view
+
+        size_hint: .8,.05
+
+        pos_hint: {"top": .85}
+        Label:
+            text: "Enter Profile Name:"
+        TextInput:
+            id: profile_name
+
+    BoxLayout:
+        size_hint_y: .1
+        pos_hint: {"top": .75}
+        Button:
+            text: "Create Profile"
+            size_hint_x: 15
+            on_press: root.create_profile()
+        Button:
+            text: "Delete"
+            size_hint_x: 15
+            on_press: root.delete_profile()
+        Button:
+            text: "Select Profile"
+            size_hint_x: 15
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "menu_screen"
+
+    GridLayout:
+        cols: 1
+        pos_hint: {"top": .65}
+        #padding: [100,0,100,100]
+        ListView:
+            id: profile_list_view
+            adapter:
+                ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
+#############################################################################
+<MenuScreen>:
+    BigButton:
+        text: "Main Menu"
+        pos_hint: {"center_x": .5, "top": 1}
+    GridLayout:
+        cols: 2
+        size_hint: .5, .2
+        pos_hint: {"center_x": .5, "top": .6}
+        spacing: 50
+        Button:
+            text: "Add Item"
+            pos_hint: {"bottom": .5}
+        Button:
+            text: "View Food Inventory"
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "inventory_screen"
+    GridLayout:
+        cols: 1
+        size_hint: .2, .1
+        pos_hint: {"center_x": .5}
+        Button:
+            text: "Logout"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "profile_screen"
+#############################################################################
 <InventoryScreen>:
     FloatLayout:
         MiniButton:
@@ -83,7 +107,7 @@
             pos_hint: {"top": 1}
             on_press:
                 app.root.transition.direction = "right"
-                app.root.current = "profile_screen"
+                app.root.current = "menu_screen"
 
         BigButton:
             text: "Your Grocery Inventory"
@@ -135,6 +159,6 @@
         MiniButton:
             text: "Add"
             pos_hint: {"center_x": .56, "center_y": .1}
-
+#############################################################################
 
 

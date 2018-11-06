@@ -9,13 +9,6 @@ from kivy.uix.listview import ListItemButton
 from kivy.properties import StringProperty
 
 
-class InventoryScreen(Screen):
-    pass
-
-
-
-
-
 class ProfileListButton(ListItemButton):
     pass
 
@@ -52,17 +45,20 @@ class ProfileScreen(Screen):
             self.profile_list._trigger_reset_populate()
 
 
+class MenuScreen(Screen):
+    pass
 
 
+class InventoryScreen(Screen):
+    pass
 
 
 class GroceryLoggerApp(App):
     def build(self):
         screen_manager = ScreenManager()
         screen_manager.add_widget(ProfileScreen(name="profile_screen"))
+        screen_manager.add_widget(MenuScreen(name="menu_screen"))
         screen_manager.add_widget(InventoryScreen(name="inventory_screen"))
-
-
         return screen_manager
 
 
