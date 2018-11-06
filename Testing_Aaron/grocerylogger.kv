@@ -28,18 +28,15 @@
 
 #############################################################################
 <ProfileScreen>:
+    profile_name_text_input: profile_name
+    profile_list: profile_list_view
 
     BigButton:
         text: "Profile Select"
         pos_hint: {"center_x": .5, "top": 1}
 
     BoxLayout:
-        orientation: "horizontal"
-        profile_name_text_input: profile_name
-        profile_list: profile_list_view
-
         size_hint: .8,.05
-
         pos_hint: {"top": .85}
         Label:
             text: "Enter Profile Name:"
