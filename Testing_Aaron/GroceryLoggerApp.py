@@ -59,8 +59,10 @@ class ProfileScreen(Screen):
 class GroceryLoggerApp(App):
     def build(self):
         screen_manager = ScreenManager()
-        #screen_manager.add_widget(ProfileScreen(name="profile_screen"))
+        screen_manager.add_widget(ProfileScreen(name="profile_screen"))
         screen_manager.add_widget(InventoryScreen(name="inventory_screen"))
+
+
         return screen_manager
 
 

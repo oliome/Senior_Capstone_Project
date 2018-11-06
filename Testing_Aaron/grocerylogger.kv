@@ -10,24 +10,25 @@
 
 
 <ProfileScreen>:
-    orientation: "vertical"
+
+    orientation: "horizontal"
     profile_name_text_input: profile_name
     profile_list: profile_list_view
     padding: 10
     spacing: 10
 
     BoxLayout:
-        size_hint_y: None
-        height: "30dp"
+        size_hint: .8,.055
 
+        pos_hint: {"top": .98}
         Label:
             text: "Enter Profile Name:"
         TextInput:
             id: profile_name
 
     BoxLayout:
-        size_hint_y: None
-        height: "100dp"
+        size_hint_y: .1
+        pos_hint: {"top": .9}
         Button:
             text: "Create Profile"
             size_hint_x: 15
@@ -37,42 +38,42 @@
             size_hint_x: 15
             on_press: root.delete_profile()
         Button:
-            text: "Inventory"
+            text: "View Inventory"
             size_hint_x: 15
             on_press:
-                root.screen_manager.current = "inventory_screen"
+                app.root.transition.direction = "left"
+                app.root.current = "inventory_screen"
 
-    ListView:
-        id: profile_list_view
-        adapter:
-            ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
+    GridLayout:
+        cols: 1
+        pos_hint: {"top": .8}
+        #padding: [100,0,100,100]
+        ListView:
+            id: profile_list_view
+            adapter:
+                ListAdapter(data=["Zack","Ollie","Rehan","Aaron","name","name","name","name","name","name","name","name","name","name"], cls=main.ProfileListButton)
 
 
 <BigButton@Button>:
-    font_size: 32
-    color: 0, 0, 0, 1
+    font_size: 16
 
-    background_normal: 'grey.jpg'
-    background_down: ''
-    background_color: .88, .88, .88, 1
-    size_hint: .7, .7
+
+
+    size_hint: .3, .1
 
 <MiniButton@Button>:
     font_size: 16
-    color: 0, 0, 0, 1
 
-    background_normal: 'grey.jpg'
-    background_down: ''
-    background_color: .88, .88, .88, 1
+
     size_hint: .1, .1
 
 <StandardButton@Button>:
     font_size: 16
-    color: 0, 0, 0, 1
 
-    background_normal: 'grey.jpg'
-    background_down: ''
-    background_color: .88, .88, .88, 1
+
+    #background_normal: 'grey.jpg'
+    #background_down: ''
+    #background_color: .88, .88, .88, 1
     size_hint: .2, .1
 
 <InventoryScreen>:
@@ -81,32 +82,46 @@
             text: "Back"
             pos_hint: {"top": 1}
             on_press:
+                app.root.transition.direction = "right"
                 app.root.current = "profile_screen"
 
-        StandardButton:
+        BigButton:
             text: "Your Grocery Inventory"
             pos_hint: {"center_x": .5, "top": 1}
 
-        BoxLayout:
-            orientation: "horizontal"
-            size_hint_x: '.9'
-            size_hint_y: '7'
-            height: .5
-            padding: [100,80,80,100]
+        GridLayout:
+            cols: 3
+            #padding: 100
+            size_hint_y: .1
+            pos_hint: {"top": .8}
+            Button:
+                text: "Item Name"
+            Button:
+                text: "Expiration Date"
+            Button:
+                text: "Barcode/UPC Number"
 
 
+        GridLayout:
+            cols: 3
+            #[from left,from top,from right,from bottom]
+            padding: [0,0,0,300]
+            pos_hint: {"top": .7}
+            #list of item names
             ListView:
                 size_hint: .8,.1
                 id: profile_list_view
-                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","item3","item4","item5","item6",], cls=main.ProfileListButton)
+                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ProfileListButton)
+            #list of expiration dates
             ListView:
                 size_hint: .8,.1
                 id: profile_list_view
-                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","item3","item4","item5","item6",], cls=main.ProfileListButton)
+                adapter: ListAdapter(data=["11/10/18","12/25/18","12/25/18","12/25/18","12/25/18","12/25/18","11/10/18","12/25/18","12/25/18","12/25/18","12/25/18","12/25/18","11/10/18","12/25/18","12/25/18","12/25/18","12/25/18","12/25/18"], cls=main.ProfileListButton)
+            #list of barcode numbers
             ListView:
                 size_hint: .8,.1
                 id: profile_list_view
-                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","item3","item4","item5","item6",], cls=main.ProfileListButton)
+                adapter: ListAdapter(data=["078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871"], cls=main.ProfileListButton)
 
 
         MiniButton:
