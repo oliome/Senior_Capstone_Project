@@ -1,101 +1,82 @@
-from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.lang import Builder
 from kivy.app import App
-from kivy.core.audio import SoundLoader
-from kivy.uix.listview import ListItemButton
-from kivy.properties import ListProperty, NumericProperty
+from kivy.lang import Builder
+from kivy.uix.recycleview import RecycleView
+from kivy.uix.recycleview.views import RecycleDataViewBehavior
+from kivy.uix.label import Label
+from kivy.properties import BooleanProperty
+from kivy.uix.recycleboxlayout import RecycleBoxLayout
+from kivy.uix.recyclegridlayout import RecycleGridLayout
+from kivy.uix.behaviors import FocusBehavior
+from kivy.uix.recycleview.layout import LayoutSelectionBehavior
 
 Builder.load_string('''
-#:import la kivy.adapters.listadapter
-#:import factory kivy.factory
 
-<MenuButton>:
-    size_hint_y: None
-    height: dp(24)
-    on_release: app.on_menu_selection(self.index)
-
-<MenuPage>:
-    BoxLayout:
-        BoxLayout:
-            size_hint:(.1, None)
-            Button:
-                text: 'Credit'
-                #on_press:root.show_popup()
-        ListView:
-            size_hint: .5,.8
-            adapter:
-                la.ListAdapter(
-                data=app.data,
-                cls=factory.Factory.MenuButton,
-                selection_mode='single',
-                allow_empty_selection=True,
-                args_converter=root.args_converter)
-
-        BoxLayout:
-            size_hint:(.1, None)
-            Button:
-                text: 'atlas'
-
-
-<Page>:
-    BoxLayout:
-        BoxLayout:
-            size_hint:(.1, None)
-            Button:
-                text: 'MENU'
-                on_press: root.manager.current = 'menu'
-        BoxLayout:
-            orientation:'vertical'
-            Button:
-                text:'Title'
-                size_hint:(1, .2)
-            Image:
-                source: '/home/hosein/Pictures/1.png'
-                size_hint:(1, .8)
-        BoxLayout:
-            size_hint:(.1, None)
-
-            Button:
-                text: 'atlas'
+<InventoryScreen>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba: (.0, 0.9, .1, .3) if self.selected else (0, 0, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    viewclass: 'InventoryScreen'
+    SelectableRecycleGridLayout:
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
+        cols: 3
 ''')
 
-class MenuButton(ListItemButton):
-    index = NumericProperty(0)
 
-class MenuPage(Screen):
-    M = SoundLoader.load('/home/hosein/Music/Man.mp3')
+items = [0, "apple", "dog", 1, "banana", "cat", 2, "pear", "rat", 3,  "pineapple", "bat"]
 
-    def plays(self):
-        if MenuPage.M.state == 'stop':
-            MenuPage.M.play()
+class SelectableRecycleGridLayout(FocusBehavior, LayoutSelectionBehavior,
+                                RecycleGridLayout):
+    ''' Adds selection and focus behaviour to the view. '''
+
+
+class InventoryScreen(RecycleView, RecycleDataViewBehavior, Label):
+    ''' Add selection support to the Label '''
+    index = None
+    selected = BooleanProperty(False)
+    selectable = BooleanProperty(True)
+
+    def refresh_view_attrs(self, rv, index, data):
+        ''' Catch and handle the view changes '''
+        self.index = index
+        return super(InventoryScreen, self).refresh_view_attrs(
+            rv, index, data)
+
+    def on_touch_down(self, touch):
+        ''' Add selection on touch down '''
+        if super(InventoryScreen, self).on_touch_down(touch):
+            return True
+        if self.collide_point(*touch.pos) and self.selectable:
+            return self.parent.select_with_touch(self.index, touch)
+
+    def apply_selection(self, rv, index, is_selected):
+        ''' Respond to the selection of items in the view. '''
+        self.selected = is_selected
+        if is_selected:
+            print("selection changed to {0}".format(rv.data[index]))
         else:
-            MenuPage.M.stop()
+            print("selection removed for {0}".format(rv.data[index]))
 
-    def args_converter(self, row_index, title):
-        print ("{0}={1}".format(row_index, title))
+    def __init__(self, **kwargs):
+        super(InventoryScreen, self).__init__(**kwargs)
+        self.data = [{'text': str(x)} for x in items]
 
-        return {
-            'index': row_index,
-            'text': title
-        }
-
-class Page(Screen):
+class RV(RecycleView):
     pass
 
-class TestApp(App):
-    data = ListProperty(["Item #{0}".format(i) for i in range(50)])
 
+class Test(App):
     def build(self):
-        sm = ScreenManager()
-        menu = MenuPage(name='menu')
-        sm.add_widget(menu)
-        for i in range(50):
-            name = Page(name=str(i))
-            sm.add_widget(name)
-        return sm
-
-    def on_menu_selection(self, index):
-        self.root.current = str(index)
+        return InventoryScreen()
 
 if __name__ == '__main__':
-    TestApp().run()
+    Test().run()

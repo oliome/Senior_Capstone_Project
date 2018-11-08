@@ -1,0 +1,130 @@
+<SelectableButton>:
+    canvas.before:
+        Color:
+            rgba: (0.5, 0.5, 0.5, 1) if self.selected else (0, 0.517, 0.705, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<MyRV@RecycleView>:
+    viewclass: 'SelectableButton'
+    SelectableRecycleGridLayout:
+        cols: 1
+        default_size: None, dp(26)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
+
+<RV>:
+    BoxLayout:
+        orientation: "vertical"
+        viewclass: 'SelectableButton'
+        GridLayout:
+            size_hint: 1, None
+            size_hint_y: None
+            height: 25
+            cols: 3
+
+            Label:
+                size_hint_x: .1
+                text: "Id"
+            Label:
+                size_hint_x: .5
+                text: "Name"
+
+        BoxLayout:
+            MyRV:
+                size_hint_x: .1
+                data: root.col1
+            MyRV:
+                size_hint_x: .5
+                data: root.col2
+
+
+<EditStatePopup>:
+    size_hint: None, None
+    title_size: 20
+    title_font: "Verdana"
+    size: 400, 275
+    auto_dismiss: False
+
+    BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            cols: 2
+            #backgroun_color: 0, 0.517, 0.705, 1
+            spacing: 10, 10
+            padding: 20, 20
+            Label:
+                text: "Id"
+                text_size: self.size
+            Label:
+                text: root.col_data[0]
+                text_size: self.size
+            Label:
+                text: "Name"
+                text_size: self.size
+                valign: 'middle'
+            TextInput:
+                text: root.col_data[1]
+                text_size: self.size
+
+
+
+<MenuButton@Button>:
+    text_size: self.size
+    valign: "middle"
+    padding_x: 5
+    size : (80,30)
+    size_hint : (None, None)
+    background_color: 90 , 90, 90, 90
+    background_normal: ''
+    color: 0, 0.517, 0.705, 1
+    border: (0, 10, 0, 0)
+
+
+<MainMenu>:
+    states_cities_or_areas: states_cities_or_areas
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        #spacing : 10
+
+        BoxLayout:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            size_hint_y: 1
+
+            MenuButton:
+                id: btn
+                text: 'Test'
+                size : (60,30)
+                on_release: root.display_states()
+
+
+        BoxLayout:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+                Color:
+                    rgb: (1,1,1)
+
+            Label:
+                size_hint_x: 45
+
+        BoxLayout:
+            id: states_cities_or_areas
+            size_hint_y: 10
+
+        Label:
+            size_hint_y: 1
