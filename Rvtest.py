@@ -43,7 +43,7 @@ class SelectableLabel(RecycleDataViewBehavior, Label):
 
     def on_touch_down(self, touch):
         ''' Add selection on touch down '''
-        print(self.index)
+        print(self.text)
        
 
     def apply_selection(self, rv, index, is_selected):
