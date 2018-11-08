@@ -1,11 +1,10 @@
-from kivy.app import App
+from http://kivy.app  import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
-from kivy.properties import ListProperty, ObjectProperty
+from http://kivy.properties  import ListProperty, ObjectProperty
 from kivy.uix.listview import ListView
 from random import shuffle
 my_list = ['Add New Profile']
-
 
 Builder.load_string('''
 
@@ -17,18 +16,20 @@ Builder.load_string('''
         name: "screen2"
         on_enter: root.update_buttons()
         BoxLayout:
+            id: box2
             orientation: "horizontal"
-            BoxLayout:
-                orientation: "horizontal"
-                id: box2
+     
             Button:
+                
                 text: "Add New Profile"
                 on_release:
                     root.current = "screen1"
 
     Screen:
         name: "screen1"
-        Popup:	
+        on_leave: root.ids.textinput.text = ''
+        on_enter: root.ids.textinput.focus = True
+        Popup:
             title: 'What is your name?'
             title_align: 'center'
             auto_dismiss: False
@@ -40,6 +41,7 @@ Builder.load_string('''
                 id: box
                 TextInput:
                     id: textinput
+                    focus: True
                     text: ''
                     multiline: False
                     font_size: 24
@@ -50,7 +52,7 @@ Builder.load_string('''
                     text: 'Create Profile'
                     size_hint: (.5, 1)
                     on_press: root.added_buttons.append(Button(text=root.ids.textinput.text))
-                    on_press: root.current = "screen2"			
+                    on_press: root.current = "screen2"
                 Button:
                     id: cancelButton
                     text: 'Cancel'
@@ -110,19 +112,12 @@ Builder.load_string('''
                 background_color: .88, .88, .88, 1
                 size_hint: .2, .1
 
-  
-
-
-
 ''')
-
-
 
 class MyScreenManager(ScreenManager):
 
     box2 = ObjectProperty(None)
     added_buttons = ListProperty([])
-
 
     def update_buttons(self,*args):
         
@@ -140,14 +135,10 @@ class MyScreenManager(ScreenManager):
         self.current = "screen3" 
         print(instance)
 
-
 class MyApp(App):
-    
 
     def build(self):
 
         return MyScreenManager()
-
-
 
 MyApp().run()
