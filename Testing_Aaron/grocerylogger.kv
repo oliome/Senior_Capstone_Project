@@ -4,17 +4,13 @@
 #: import Screen kivy.uix.screenmanager.ScreenManager
 #: import main GroceryLoggerApp
 
-<BigButton@Button>:
-    font_size: 16
 
-
-
-    size_hint: .3, .1
+<HeaderButton@Button>:
+    font_size: 32
+    size_hint_y: .1
 
 <MiniButton@Button>:
     font_size: 16
-
-
     size_hint: .1, .1
 
 <StandardButton@Button>:
@@ -31,29 +27,26 @@
     profile_name_text_input: profile_name
     profile_list: profile_list_view
 
-    BigButton:
-        text: "Profile Select"
+    HeaderButton:
+        text: "Select User Profile"
         pos_hint: {"center_x": .5, "top": 1}
 
     BoxLayout:
-        size_hint: .8,.05
-        pos_hint: {"top": .85}
+        size_hint: .7,.05
+        pos_hint: {"center_x": .5, "top": .85}
         Label:
             text: "Enter Profile Name:"
         TextInput:
             id: profile_name
+            text_limit: "3"
 
     BoxLayout:
         size_hint_y: .1
         pos_hint: {"top": .75}
         Button:
-            text: "Create Profile"
+            text: "Add New Profile"
             size_hint_x: 15
             on_press: root.create_profile()
-        Button:
-            text: "Delete"
-            size_hint_x: 15
-            on_press: root.delete_profile()
         Button:
             text: "Select Profile"
             size_hint_x: 15
@@ -67,21 +60,31 @@
         #padding: [100,0,100,100]
         ListView:
             id: profile_list_view
+            data: ["Zack","Ollie","Rehan","Aaron"]
             adapter:
                 ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
+
+    BoxLayout:
+        Button:
+            text: "Delete Selected Profile"
+            size_hint_y: .05
+            on_press: root.delete_profile()
 #############################################################################
 <MenuScreen>:
-    BigButton:
+    HeaderButton:
         text: "Main Menu"
         pos_hint: {"center_x": .5, "top": 1}
     GridLayout:
         cols: 2
-        size_hint: .5, .2
+        size_hint: .7, .2
         pos_hint: {"center_x": .5, "top": .6}
         spacing: 50
         Button:
             text: "Add Item"
             pos_hint: {"bottom": .5}
+            on_press:
+                app.root.transition.direction = "up"
+                app.root.current = "additem_screen"
         Button:
             text: "View Food Inventory"
             on_press:
@@ -92,22 +95,22 @@
         size_hint: .2, .1
         pos_hint: {"center_x": .5}
         Button:
-            text: "Logout"
+            text: "Profile Select"
             on_press:
                 app.root.transition.direction = "right"
                 app.root.current = "profile_screen"
 #############################################################################
 <InventoryScreen>:
     FloatLayout:
-        MiniButton:
-            text: "Back"
-            pos_hint: {"top": 1}
+        StandardButton:
+            text: "Back to Main Menu"
+            pos_hint: {"top": .9}
             on_press:
                 app.root.transition.direction = "right"
                 app.root.current = "menu_screen"
 
-        BigButton:
-            text: "Your Grocery Inventory"
+        HeaderButton:
+            text: "Your Food Inventory"
             pos_hint: {"center_x": .5, "top": 1}
 
         GridLayout:
@@ -117,6 +120,8 @@
             pos_hint: {"top": .8}
             Button:
                 text: "Item Name"
+                #on_press:
+                    #app.root.
             Button:
                 text: "Expiration Date"
             Button:
@@ -156,6 +161,55 @@
         MiniButton:
             text: "Add"
             pos_hint: {"center_x": .56, "center_y": .1}
+            on_press:
+                app.root.transition.direction = "up"
+                app.root.current = "additem_screen"
 #############################################################################
+<AddItemScreen>:
+    FloatLayout:
+        StandardButton:
+            text: "Back to Inventory"
+            pos_hint: {"top": .9}
+            on_press:
+                app.root.transition.direction = "down"
+                app.root.current = "inventory_screen"
+
+        HeaderButton:
+            text: "Add Item"
+            pos_hint: {"center_x": .5, "top": 1}
+
+        Button:
+            text: "Scan Barcode or Enter Barcode Number"
+            pos_hint: {"center_x": .5, "top": .8}
+            size_hint: .5,.05
+        TextInput:
+            text: "enter barcode number here"
+            pos_hint: {"center_x": .5, "top": .75}
+            size_hint: .5,.05
+        Button:
+            text: "Select Expiration Date (optional)"
+            pos_hint: {"center_x": .5, "top": .7}
+            size_hint: .5,.05
+        Button:
+            text: "Interactive Calendar Here"
+            pos_hint: {"center_x": .5, "top": .65}
+            size_hint: .5,.4
+            #on_press:
+                #root.show_calendar()
+
+        MiniButton:
+            text: "Submit"
+            pos_hint: {"center_x": .2 , "center_y": .1}
+
+        MiniButton:
+            text: "Other"
+            pos_hint: {"center_x": .33, "center_y": .1}
+
+        MiniButton:
+            text: "Cancel"
+            pos_hint: {"center_x": .46, "center_y": .1}
+            on_press:
+                app.root.transition.direction = "down"
+                app.root.current = "inventory_screen"
 
 
