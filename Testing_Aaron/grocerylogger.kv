@@ -24,8 +24,7 @@
 
 #############################################################################
 <ProfileScreen>:
-    profile_name_text_input: profile_name
-    profile_list: profile_list_view
+
 
     HeaderButton:
         text: "Select User Profile"
@@ -60,7 +59,7 @@
         #padding: [100,0,100,100]
         ListView:
             id: profile_list_view
-            size: (100, '48dp')
+            size: (100, '500dp')
             data: ["Zack","Ollie","Rehan","Aaron"]
             adapter:
                 ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
@@ -102,6 +101,8 @@
                 app.root.current = "profile_screen"
 #############################################################################
 <InventoryScreen>:
+
+
     FloatLayout:
         StandardButton:
             text: "Back to Main Menu"
@@ -136,18 +137,18 @@
             pos_hint: {"top": .7}
             #list of item names
             ListView:
-                size_hint: .8,.1
-                id: profile_list_view
-                adapter: ListAdapter(data=["Great Value 2% Milk                                 12/25/18                        123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ProfileListButton)
+
+                id: item_list_view
+                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
             #list of expiration dates
             #ListView:
              #   size_hint: .8,.1
-              #  id: profile_list_view
+              #  id: item_list_view
               #  adapter: ListAdapter(data=["11/10/18","12/25/18","12/25/18","12/25/18","12/25/18","12/25/18","11/10/18","12/25/18","12/25/18","12/25/18","12/25/18","12/25/18","11/10/18","12/25/18","12/25/18","12/25/18","12/25/18","12/25/18"], cls=main.ProfileListButton)
             #list of barcode numbers
             #ListView:
              #   size_hint: .8,.1
-              #  id: profile_list_view
+              #  id: item_list_view
                # adapter: ListAdapter(data=["078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871","078742022871"], cls=main.ProfileListButton)
 
 
@@ -167,6 +168,7 @@
                 app.root.current = "additem_screen"
 #############################################################################
 <AddItemScreen>:
+
     FloatLayout:
         StandardButton:
             text: "Back to Inventory"

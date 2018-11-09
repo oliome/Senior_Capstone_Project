@@ -20,14 +20,22 @@ from kivy.properties import StringProperty
 profile_name_text_input = ObjectProperty()
 profile_list = ObjectProperty()
 
+item_name_text_input = ObjectProperty()
+item_list = ObjectProperty()
+
 
 class ProfileListButton(ListItemButton):
+    def __init__(self, **kwargs):
+        super(ProfileListButton, self).__init__(**kwargs)
+        self.height = "75dp"
+
+
+class ItemListButton(ListItemButton):
     pass
 
 
 class ProfileScreen(Screen):
-    profile_name_text_input = ObjectProperty()
-    profile_list = ObjectProperty()
+
 
     def create_profile(self):
         # Get the profile's name from TextInputs
@@ -62,19 +70,30 @@ class MenuScreen(Screen):
 
 
 class InventoryScreen(Screen):
+
     def sort_items(self):
         pass
 
     def sort_dates(self):
         pass
 
+    def add_item(self):
+        item_name = self.profile_name_text_input.text
+        if item_name != '':
+            # Add to ListView
+            self.profile_list.adapter.data.extend([item_name])
+
     items = ["Great Value 2% Milk","12/25/18","078742022871","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"]
 
 
 
 
-class AddItemScreen(Screen):
-    pass
+class AddItemScreen(InventoryScreen):
+    def add_item(self):
+        item_name = self.profile_name_text_input.text
+        if item_name != '':
+            # Add to ListView
+            self.profile_list.adapter.data.extend([item_name])
 
 
 class GroceryLoggerApp(App):
