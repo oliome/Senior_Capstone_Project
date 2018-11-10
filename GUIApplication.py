@@ -1,7 +1,7 @@
-from http://kivy.app  import App
+from kivy.app  import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
-from http://kivy.properties  import ListProperty, ObjectProperty
+from kivy.properties  import ListProperty, ObjectProperty
 from kivy.uix.listview import ListView
 from random import shuffle
 my_list = ['Add New Profile']
