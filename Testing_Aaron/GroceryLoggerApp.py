@@ -35,7 +35,8 @@ class ItemListButton(ListItemButton):
 
 
 class ProfileScreen(Screen):
-
+    profile_name_text_input = ObjectProperty()
+    profile_list = ObjectProperty()
 
     def create_profile(self):
         # Get the profile's name from TextInputs
@@ -86,9 +87,7 @@ class InventoryScreen(Screen):
     items = ["Great Value 2% Milk","12/25/18","078742022871","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"]
 
 
-
-
-class AddItemScreen(InventoryScreen):
+class AddItemScreen(Screen):
     def add_item(self):
         item_name = self.profile_name_text_input.text
         if item_name != '':

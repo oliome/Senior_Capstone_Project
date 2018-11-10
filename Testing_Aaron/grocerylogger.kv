@@ -5,6 +5,7 @@
 #: import main GroceryLoggerApp
 
 
+
 <HeaderButton@Button>:
     font_size: 32
     size_hint_y: .1
@@ -24,7 +25,8 @@
 
 #############################################################################
 <ProfileScreen>:
-
+    profile_name_text_input: profile_name
+    profile_list: profile_list_view
 
     HeaderButton:
         text: "Select User Profile"
@@ -37,7 +39,7 @@
             text: "Enter Profile Name:"
         TextInput:
             id: profile_name
-            text_limit: "3"
+            focus: True
 
     BoxLayout:
         size_hint_y: .1
@@ -56,7 +58,7 @@
     GridLayout:
         cols: 1
         pos_hint: {"top": .65}
-        #padding: [100,0,100,100]
+        padding: [0,0,0,300]
         ListView:
             id: profile_list_view
             size: (100, '500dp')
@@ -95,7 +97,7 @@
         size_hint: .2, .1
         pos_hint: {"center_x": .5}
         Button:
-            text: "Profile Select"
+            text: "Switch Profile"
             on_press:
                 app.root.transition.direction = "right"
                 app.root.current = "profile_screen"
@@ -185,14 +187,18 @@
             text: "Scan Barcode or Enter Barcode Number"
             pos_hint: {"center_x": .5, "top": .8}
             size_hint: .5,.05
+
         TextInput:
-            text_hint: "enter barcode number here"
+            id: barcode_number
+            focus: True
             pos_hint: {"center_x": .5, "top": .75}
             size_hint: .5,.05
+
         Button:
             text: "Select Expiration Date (optional)"
             pos_hint: {"center_x": .5, "top": .7}
             size_hint: .5,.05
+            on_press: root.showname()
         Button:
             text: "Interactive Calendar Here"
             pos_hint: {"center_x": .5, "top": .65}

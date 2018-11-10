@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="877cbae9-45d1-4527-8a04-481444e93c1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Testing_Rehan/GroceryLoggerApp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testing_Rehan/grocerylogger.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rvtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rvtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv" beforeDir="false" afterPath="$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +20,7 @@
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$screenmanager.coverage" NAME="screenmanager Coverage Results" MODIFIED="1541273911168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen__2_.coverage" NAME="ProfileScreen (2) Coverage Results" MODIFIED="1541184034884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$scrollview.coverage" NAME="scrollview Coverage Results" MODIFIED="1541279743517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$CapstoneGui.coverage" NAME="CapstoneGui Coverage Results" MODIFIED="1541701908080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$CapstoneGui.coverage" NAME="CapstoneGui Coverage Results" MODIFIED="1541782605686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$test.coverage" NAME="test Coverage Results" MODIFIED="1541455018069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$Rvtest.coverage" NAME="Rvtest Coverage Results" MODIFIED="1541702563764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenSwitch.coverage" NAME="ScreenSwitch Coverage Results" MODIFIED="1541183812274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
@@ -31,7 +29,7 @@
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenSwitch__1_.coverage" NAME="ScreenSwitch (1) Coverage Results" MODIFIED="1541130095759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileTesting" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$studentdb.coverage" NAME="studentdb Coverage Results" MODIFIED="1541129118690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Profile Select" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLogger.coverage" NAME="GroceryLogger Coverage Results" MODIFIED="1541198023064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1541702826197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1541878687570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$Guimain10_13_18.coverage" NAME="Guimain10_13_18 Coverage Results" MODIFIED="1540350921540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -79,7 +77,7 @@
     <session id="-802766025">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="4" />
@@ -87,28 +85,29 @@
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="2" />
-          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.37" value="2" />
           <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="31" />
-          <entry key="kv" value="4320" />
+          <entry key="kv" value="4510" />
           <entry key="md" value="57" />
-          <entry key="py" value="1409" />
-          <entry key="txt" value="167" />
+          <entry key="py" value="1479" />
+          <entry key="txt" value="204" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="57" />
-          <entry key="PLAIN_TEXT" value="4518" />
-          <entry key="Python" value="1409" />
+          <entry key="PLAIN_TEXT" value="4745" />
+          <entry key="Python" value="1479" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -129,35 +128,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+            <state relative-caret-position="141">
+              <caret line="192" column="12" selection-start-line="192" selection-start-column="12" selection-end-line="192" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-426">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="343">
+              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <marker date="1541637191315" expanded="true" signature="577:579" ph="..." />
-                <marker date="1541637191315" expanded="true" signature="1579:1591" ph="..." />
-                <marker date="1541637191315" expanded="true" signature="1647:1666" ph="..." />
-                <marker date="1541637191315" expanded="true" signature="1687:1692" ph="..." />
-                <marker date="1541637191315" expanded="true" signature="1731:1743" ph="..." />
+                <marker date="1541878687504" expanded="true" signature="3214:3216" ph="..." />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Testing_Rehan/grocerylogger.kv">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -185,6 +175,10 @@
       <find>logou</find>
       <find>Big</find>
       <find>back</find>
+      <find>color</find>
+      <find>text</find>
+      <find>shown</find>
+      <find>simple</find>
     </findStrings>
     <replaceStrings>
       <replace>profile</replace>
@@ -222,10 +216,10 @@
         <option value="$PROJECT_DIR$/Testing_Aaron/profilescreen.kv" />
         <option value="$PROJECT_DIR$/Testing_Aaron/inventoryscreen.kv" />
         <option value="$PROJECT_DIR$/Testing_Aaron/test.py" />
-        <option value="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Rvtest.py" />
         <option value="$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv" />
+        <option value="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" />
       </list>
     </option>
   </component>
@@ -247,6 +241,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,7 +258,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,6 +313,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="GroceryLoggerApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Senior_Capstone_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Testing_Aaron" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Rvtest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Senior_Capstone_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -342,14 +358,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.GroceryLoggerApp" />
       <item itemvalue="Python.CapstoneGui" />
       <item itemvalue="Python.Rvtest" />
+      <item itemvalue="Python.GroceryLoggerApp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Rvtest" />
+        <item itemvalue="Python.GroceryLoggerApp" />
         <item itemvalue="Python.CapstoneGui" />
+        <item itemvalue="Python.Rvtest" />
       </list>
     </recent_temporary>
   </component>
@@ -392,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541699606750</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding rehan's testing folder">
+      <created>1541703635426</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541703635426</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -406,8 +430,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1270" height="772" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18218954" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18872549" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -441,7 +466,8 @@
     <MESSAGE value="restored functionality to create profile button" />
     <MESSAGE value="new buttons and screen added for add item functionality" />
     <MESSAGE value="adding .gitignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding .gitignore file" />
+    <MESSAGE value="adding rehan's testing folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding rehan's testing folder" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ScreenSwitch.py" />
@@ -541,31 +567,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-426">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <marker date="1541637191315" expanded="true" signature="577:579" ph="..." />
-            <marker date="1541637191315" expanded="true" signature="1579:1591" ph="..." />
-            <marker date="1541637191315" expanded="true" signature="1647:1666" ph="..." />
-            <marker date="1541637191315" expanded="true" signature="1687:1692" ph="..." />
-            <marker date="1541637191315" expanded="true" signature="1731:1743" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+        <state relative-caret-position="141">
+          <caret line="192" column="12" selection-start-line="192" selection-start-column="12" selection-end-line="192" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1541878687504" expanded="true" signature="3214:3216" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
