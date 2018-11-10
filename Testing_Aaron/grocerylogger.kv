@@ -185,26 +185,41 @@
 
         Button:
             text: "Scan Barcode or Enter Barcode Number"
-            pos_hint: {"center_x": .5, "top": .8}
-            size_hint: .5,.05
+            pos_hint: {"center_x": .5, "top": .6}
+            size_hint: .6,.05
 
         TextInput:
             id: barcode_number
             focus: True
-            pos_hint: {"center_x": .5, "top": .75}
-            size_hint: .5,.05
+            pos_hint: {"center_x": .5, "top": .55}
+            size_hint: .6,.05
 
         Button:
-            text: "Select Expiration Date (optional)"
-            pos_hint: {"center_x": .5, "top": .7}
-            size_hint: .5,.05
-            on_press: root.showname()
-        Button:
-            text: "Interactive Calendar Here"
-            pos_hint: {"center_x": .5, "top": .65}
-            size_hint: .5,.4
-            #on_press:
-                #root.show_calendar()
+            text: "Enter Expiration Date (optional)"
+            pos_hint: {"center_x": .5, "top": .5}
+            size_hint: .6,.05
+
+        TextInput:
+            id: month
+            hint_text: '2 Digits for Month'
+            pos_hint: {"center_x": .3, "top": .45}
+            size_hint: .2,.05
+
+        TextInput:
+            id: day
+            hint_text: '2 Digits for Day'
+            pos_hint: {"center_x": .5, "top": .45}
+            size_hint: .2,.05
+
+        TextInput:
+            id: year
+            hint_text: '4 Digits for Year'
+            pos_hint: {"center_x": .7, "top": .45}
+            size_hint: .2,.05
+
+
+
+
 
         MiniButton:
             text: "Submit"
@@ -220,5 +235,6 @@
             on_press:
                 app.root.transition.direction = "down"
                 app.root.current = "inventory_screen"
+
 
 

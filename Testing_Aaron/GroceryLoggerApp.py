@@ -4,7 +4,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.listview import ListItemButton
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.listview import ListItemButton
+from kivy.uix.listview import ListItemButton, ListItemLabel, CompositeListItem, ListView
 from kivy.uix.popup import Popup
 from kivy.uix.recycleview import RecycleView
 from kivy.uix.recycleview.views import RecycleDataViewBehavior
@@ -15,7 +15,10 @@ from kivy.uix.recyclegridlayout import RecycleGridLayout
 from kivy.uix.behaviors import FocusBehavior
 from kivy.uix.recycleview.layout import LayoutSelectionBehavior
 from kivy.adapters.listadapter import ListAdapter
+from kivy.adapters.dictadapter import DictAdapter
+from kivy.uix.gridlayout import GridLayout
 from kivy.properties import StringProperty
+
 
 profile_name_text_input = ObjectProperty()
 profile_list = ObjectProperty()
