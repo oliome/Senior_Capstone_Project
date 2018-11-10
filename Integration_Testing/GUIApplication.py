@@ -6,6 +6,11 @@ from kivy.uix.listview import ListView
 from kivy.uix.button import Button
 from random import shuffle
 from functools import partial
+
+#added these two .... Adds the functions, then creates the database if it doesnt exist
+from SQLite_test import *
+profile_table_setup
+
 my_list = ['Zack','Ollie','Reyhan','Aaron']
 
 Builder.load_string('''
