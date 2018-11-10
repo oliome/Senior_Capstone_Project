@@ -90,16 +90,21 @@ def main():
     conn = create_connection(database)
     with conn:
         profile_table_setup(conn)
-        add = raw_input("Name you would like to add:")
+        #--------Add Profile Test------------
+        #add = raw_input("Name you would like to add:")
+        #create_profile(conn,add)
+
+        #-------Delete Profile test----------
         #delete= input("Name you would like to delete:")
-        name= raw_input("Name you would like to select:")
-        create_profile(conn,add)
         #delete_profile(conn,delete)
-        #print("\n1. Query profiles by name:")
-        select_profile_db(conn,name)
+
+        #-------Select Profile Test----------
+        #name= raw_input("Name you would like to select:")
+        #select_profile_db(conn,name)
  
-        print("\n2. Query all profiles")
-        select_all_profiles(conn)
+        #-------Show All Profiles Test-------
+        #print("\n2. Query all profiles")
+        #select_all_profiles(conn)
  
  
 if __name__ == '__main__':
