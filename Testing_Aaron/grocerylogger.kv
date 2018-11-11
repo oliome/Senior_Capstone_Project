@@ -61,8 +61,7 @@
         padding: [0,0,0,300]
         ListView:
             id: profile_list_view
-            size: (100, '500dp')
-            data: ["Zack","Ollie","Rehan","Aaron"]
+            #size: (100, '500dp')
             adapter:
                 ListAdapter(data=["Zack","Ollie","Rehan","Aaron"], cls=main.ProfileListButton)
 
@@ -103,7 +102,7 @@
                 app.root.current = "profile_screen"
 #############################################################################
 <InventoryScreen>:
-
+    item_list: item_list_view
 
     FloatLayout:
         StandardButton:
@@ -139,9 +138,9 @@
             pos_hint: {"top": .7}
             #list of item names
             ListView:
-
                 id: item_list_view
-                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
+                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='multiple')
+#                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
             #list of expiration dates
             #ListView:
              #   size_hint: .8,.1
@@ -159,8 +158,11 @@
             pos_hint: {"center_x": .2 , "center_y": .1}
 
         StandardButton:
+            id: search
             text: "Search Recipes"
             pos_hint: {"center_x": .38, "center_y": .1}
+            on_press:
+                root.search_recipes()
 
         MiniButton:
             text: "Add"
@@ -183,38 +185,48 @@
             text: "Add Item"
             pos_hint: {"center_x": .5, "top": 1}
 
-        Button:
-            text: "Scan Barcode or Enter Barcode Number"
-            pos_hint: {"center_x": .5, "top": .6}
-            size_hint: .6,.05
-
         TextInput:
             id: barcode_number
-            focus: True
-            pos_hint: {"center_x": .5, "top": .55}
-            size_hint: .6,.05
+            hint_text: "Scan or Enter Barcode Number"
+            write_tab: False
+            multiline: False
+            pos_hint: {"center_x": .4, "top": .6}
+            size_hint: .4,.05
+
+        Button:
+            text: "Search"
+            pos_hint: {"center_x": .7, "top": .6}
+            size_hint: .2,.05
+            on_press:
+                root.search_item(barcode_number)
 
         Button:
             text: "Enter Expiration Date (optional)"
-            pos_hint: {"center_x": .5, "top": .5}
+            pos_hint: {"center_x": .5, "top": .55}
             size_hint: .6,.05
 
         TextInput:
             id: month
             hint_text: '2 Digits for Month'
-            pos_hint: {"center_x": .3, "top": .45}
+            write_tab: False
+            multiline: False
+            pos_hint: {"center_x": .3, "top": .5}
             size_hint: .2,.05
 
         TextInput:
             id: day
             hint_text: '2 Digits for Day'
-            pos_hint: {"center_x": .5, "top": .45}
+            write_tab: False
+            multiline: False
+            pos_hint: {"center_x": .5, "top": .5}
             size_hint: .2,.05
 
         TextInput:
             id: year
             hint_text: '4 Digits for Year'
-            pos_hint: {"center_x": .7, "top": .45}
+            write_tab: False
+            multiline: False
+            pos_hint: {"center_x": .7, "top": .5}
             size_hint: .2,.05
 
 

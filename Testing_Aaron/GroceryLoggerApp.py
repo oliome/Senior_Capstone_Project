@@ -1,3 +1,6 @@
+import json
+import requests
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
@@ -20,6 +23,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.properties import StringProperty
 
 
+
 profile_name_text_input = ObjectProperty()
 profile_list = ObjectProperty()
 
@@ -31,6 +35,7 @@ class ProfileListButton(ListItemButton):
     def __init__(self, **kwargs):
         super(ProfileListButton, self).__init__(**kwargs)
         self.height = "75dp"
+        self.selection_mode = 'multiple'
 
 
 class ItemListButton(ListItemButton):
@@ -74,6 +79,13 @@ class MenuScreen(Screen):
 
 
 class InventoryScreen(Screen):
+    item_list = ObjectProperty()
+
+    items = ["Great Value 2% Milk", "12/25/18", "078742022871", "Tyson Frozen Chicken", "JIF Peanut Butter 40oz",
+             "Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk",
+             "Tyson Frozen Chicken", "JIF Peanut Butter 40oz", "Chipotle Tabasco", "Kraft Cheddar Cheese",
+             "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk", "Tyson Frozen Chicken",
+             "JIF Peanut Butter 40oz", "Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips"]
 
     def sort_items(self):
         pass
@@ -81,21 +93,36 @@ class InventoryScreen(Screen):
     def sort_dates(self):
         pass
 
-    def add_item(self):
-        item_name = self.profile_name_text_input.text
-        if item_name != '':
-            # Add to ListView
-            self.profile_list.adapter.data.extend([item_name])
-
-    items = ["Great Value 2% Milk","12/25/18","078742022871","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"]
+    def search_recipes(self):
+        #if a list item is selected
+        if self.item_list.adapter.selection:
+            selection = self.item_list.adapter.selection[0].text
+            App_ID = 'cf938db6'
+            APP_KEY = '91a43a29d2211953084fcca6b71b005b'
+            r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
+            data = r.json()
+            for i in data['hits']:
+                print('*****************************')
+                print('*****************************')
+                data1 = i['recipe']
+                dishName = data1['label']
+                print('Recipe for '+dishName)
+                for recipe in data1['ingredientLines']:
+                    print(recipe)
 
 
 class AddItemScreen(Screen):
-    def add_item(self):
-        item_name = self.profile_name_text_input.text
-        if item_name != '':
-            # Add to ListView
-            self.profile_list.adapter.data.extend([item_name])
+    def search_item(self, barcode_number):
+        if barcode_number.text != '':
+            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
+            data = r.json()
+            # displaying in json format
+            item = data['products'][0]['product_name']
+            # grabbing the brand property from the products array. Debug for more info
+            print(item)
+            print(barcode_number.text)
+        else:
+            print("no barcode entered")
 
 
 class GroceryLoggerApp(App):

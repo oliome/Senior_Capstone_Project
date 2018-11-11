@@ -9,7 +9,7 @@ from functools import partial
 
 #added these two .... Adds the functions, then creates the database if it doesnt exist
 from SQLite_test import *
-profile_table_setup
+profile_table_setup()
 
 my_list = ['Zack','Ollie','Reyhan','Aaron']
 
