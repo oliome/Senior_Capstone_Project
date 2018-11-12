@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="877cbae9-45d1-4527-8a04-481444e93c1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Integration_Testing/GUIApplication.py" beforeDir="false" afterPath="$PROJECT_DIR$/Integration_Testing/GUIApplication.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv" beforeDir="false" afterPath="$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testing_Aaron/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testing_Aaron/test2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +18,11 @@
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1541966733663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_kv.coverage" NAME="list_kv Coverage Results" MODIFIED="1541885317242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenSwitch.coverage" NAME="ScreenSwitch Coverage Results" MODIFIED="1541183812274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GUIApplication.coverage" NAME="GUIApplication Coverage Results" MODIFIED="1541910602134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration_Testing" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GUIApplication.coverage" NAME="GUIApplication Coverage Results" MODIFIED="1542000384236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration_Testing" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$screenmanager.coverage" NAME="screenmanager Coverage Results" MODIFIED="1541273911168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$studentdb.coverage" NAME="studentdb Coverage Results" MODIFIED="1541129118690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Profile Select" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$scrollview.coverage" NAME="scrollview Coverage Results" MODIFIED="1541279743517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1541970955906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1542000389724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen.coverage" NAME="ProfileScreen Coverage Results" MODIFIED="1541451175960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen__1_.coverage" NAME="ProfileScreen (1) Coverage Results" MODIFIED="1541271879836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$CapstoneGui__1_.coverage" NAME="CapstoneGui (1) Coverage Results" MODIFIED="1541183731396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
@@ -81,7 +78,7 @@
         <counts>
           <entry key="kv" value="7" />
           <entry key="md" value="1" />
-          <entry key="py" value="22" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -89,22 +86,22 @@
           <entry key="Kivy" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="22" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="kv" value="1740" />
-          <entry key="py" value="2392" />
-          <entry key="txt" value="46" />
+          <entry key="kv" value="1824" />
+          <entry key="py" value="2475" />
+          <entry key="txt" value="253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kivy" value="1006" />
-          <entry key="PLAIN_TEXT" value="795" />
-          <entry key="Python" value="2392" />
+          <entry key="Kivy" value="1090" />
+          <entry key="PLAIN_TEXT" value="1002" />
+          <entry key="Python" value="2475" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -166,54 +163,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.43780488">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/list_composite.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="224">
-                  <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#0#49#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/list_master_detail.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#0#42#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/fixtures.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-51" />
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/fruit_detail_view.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="33" column="40" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="40" />
-                  <folding>
-                    <element signature="e#0#42#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="141" selection-start-line="141" selection-end-line="141" />
+                <state relative-caret-position="386">
+                  <caret line="241" column="19" lean-forward="true" selection-start-line="241" selection-start-column="19" selection-end-line="241" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -222,54 +176,24 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+                <state relative-caret-position="428">
+                  <caret line="131" column="30" lean-forward="true" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
-                    <marker date="1541970785309" expanded="true" signature="1338:1339" ph="..." />
+                    <marker date="1541984699752" expanded="true" signature="1338:1339" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/Lib/json/decoder.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6018">
-                  <caret line="356" selection-start-line="356" selection-end-line="356" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Integration_Testing/SQLite_test.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/list_kv.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#0#49#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Integration_Testing/GUIApplication.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2295">
-                  <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -444,6 +368,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.GroceryLoggerApp">
+    <configuration name="GUIApplication" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Senior_Capstone_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Integration_Testing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Integration_Testing/GUIApplication.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="GroceryLoggerApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Senior_Capstone_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -532,42 +478,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Senior_Capstone_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Testing_Aaron" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testing_Aaron/test2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.GroceryLoggerApp" />
       <item itemvalue="Python.list_composite" />
-      <item itemvalue="Python.test2" />
       <item itemvalue="Python.list_master_detail" />
       <item itemvalue="Python.fruit_detail_view" />
+      <item itemvalue="Python.GUIApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GroceryLoggerApp" />
+        <item itemvalue="Python.GUIApplication" />
         <item itemvalue="Python.fruit_detail_view" />
         <item itemvalue="Python.list_master_detail" />
         <item itemvalue="Python.list_composite" />
-        <item itemvalue="Python.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -624,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541886399133</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="successfully integrated recipe and barcode lookup API with Rehan's code">
+      <created>1541971073797</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541971073797</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -676,7 +607,8 @@
     <MESSAGE value="adding .gitignore file" />
     <MESSAGE value="adding rehan's testing folder" />
     <MESSAGE value="updating shit with inventory screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating shit with inventory screens" />
+    <MESSAGE value="successfully integrated recipe and barcode lookup API with Rehan's code" />
+    <option name="LAST_COMMIT_MESSAGE" value="successfully integrated recipe and barcode lookup API with Rehan's code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ScreenSwitch.py" />
@@ -763,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python36/Lib/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6018">
-          <caret line="356" selection-start-line="356" selection-end-line="356" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Integration_Testing/SQLite_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -783,16 +708,6 @@
           <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Integration_Testing/GUIApplication.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -834,11 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/fixtures.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
     <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/fruit_detail_view.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -849,20 +759,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv">
+    <entry file="file://C:/Python36/Lib/json/decoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="2703">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/share/kivy-examples/widgets/lists/fixtures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing_Aaron/GroceryLoggerApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+        <state relative-caret-position="428">
+          <caret line="131" column="30" lean-forward="true" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1541970785309" expanded="true" signature="1338:1339" ph="..." />
+            <marker date="1541984699752" expanded="true" signature="1338:1339" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing_Aaron/grocerylogger.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="241" column="19" lean-forward="true" selection-start-line="241" selection-start-column="19" selection-end-line="241" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Integration_Testing/GUIApplication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

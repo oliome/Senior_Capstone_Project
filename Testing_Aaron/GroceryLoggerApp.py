@@ -124,6 +124,8 @@ class AddItemScreen(Screen):
         else:
             print("no barcode entered")
 
+    def join_date(self, month, day, year):
+        print(month.text+"/"+day.text+"/"+year.text)
 
 class GroceryLoggerApp(App):
     def build(self):

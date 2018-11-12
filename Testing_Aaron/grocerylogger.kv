@@ -139,7 +139,7 @@
             #list of item names
             ListView:
                 id: item_list_view
-                adapter: ListAdapter(data=["Great Value 2% Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='multiple')
+                adapter: ListAdapter(data=["Great Value Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='multiple')
 #                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
             #list of expiration dates
             #ListView:
@@ -204,6 +204,8 @@
             text: "Enter Expiration Date (optional)"
             pos_hint: {"center_x": .5, "top": .55}
             size_hint: .6,.05
+            on_press:
+                root.join_date(month, day, year)
 
         TextInput:
             id: month
