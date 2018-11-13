@@ -1,6 +1,7 @@
 #: import ListAdapter kivy.adapters.listadapter.ListAdapter
 #: import ListItemButton kivy.uix.listview.ListItemButton
 #: import ScreenManager kivy.uix.screenmanager.ScreenManager
+
 #: import Screen kivy.uix.screenmanager.ScreenManager
 #: import main GroceryLoggerApp
 
@@ -24,6 +25,10 @@
     size_hint: .2, .1
 
 #############################################################################
+<SplashScreen>:
+
+
+#############################################################################
 <ProfileScreen>:
     profile_name_text_input: profile_name
     profile_list: profile_list_view
@@ -39,6 +44,8 @@
             text: "Enter Profile Name:"
         TextInput:
             id: profile_name
+            multiline: False
+            write_tab: False
             focus: True
 
     BoxLayout:
@@ -190,65 +197,134 @@
             hint_text: "Scan or Enter Barcode Number"
             write_tab: False
             multiline: False
-            pos_hint: {"center_x": .4, "top": .6}
+            pos_hint: {"center_x": .4, "top": .7}
             size_hint: .4,.05
 
         Button:
             text: "Search"
-            pos_hint: {"center_x": .7, "top": .6}
+            pos_hint: {"center_x": .7, "top": .7}
             size_hint: .2,.05
             on_press:
                 root.search_item(barcode_number)
 
         Button:
-            text: "Enter Expiration Date (optional)"
-            pos_hint: {"center_x": .5, "top": .55}
+            text: "Select Expiration Date (optional)"
+            pos_hint: {"center_x": .5, "top": .65}
             size_hint: .6,.05
             on_press:
-                root.join_date(month, day, year)
+                root.get_date(month, day, year)
 
-        TextInput:
+#        TextInput:
+#            id: month
+#            hint_text: '2 Digits for Month'
+#            write_tab: False
+#            multiline: False
+#            pos_hint: {"center_x": .3, "top": .5}
+#            size_hint: .2,.05
+#
+#        TextInput:
+#            id: day
+#            hint_text: '2 Digits for Day'
+#            write_tab: False
+#            multiline: False
+#            pos_hint: {"center_x": .5, "top": .5}
+#            size_hint: .2,.05
+#
+#        TextInput:
+#            id: year
+#            hint_text: '4 Digits for Year'
+#            write_tab: False
+#            multiline: False
+#            pos_hint: {"center_x": .7, "top": .5}
+#            size_hint: .2,.05
+
+        Spinner:
             id: month
-            hint_text: '2 Digits for Month'
-            write_tab: False
-            multiline: False
-            pos_hint: {"center_x": .3, "top": .5}
+            text: "Select Month"
+            pos_hint: {"center_x": .3, "top": .6}
             size_hint: .2,.05
+            #values: 'January','February','March','April','May','June','July','August','September','October','November','December'
+            values: ['01','02','03','04','05','06','07','08','09','10','11','12']
 
-        TextInput:
+        Spinner:
             id: day
-            hint_text: '2 Digits for Day'
-            write_tab: False
-            multiline: False
-            pos_hint: {"center_x": .5, "top": .5}
+            text: "Select Day"
+            pos_hint: {"center_x": .5, "top": .6}
             size_hint: .2,.05
+            values: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
 
-        TextInput:
+        Spinner:
             id: year
-            hint_text: '4 Digits for Year'
-            write_tab: False
-            multiline: False
-            pos_hint: {"center_x": .7, "top": .5}
+            text: "Select Year"
+            pos_hint: {"center_x": .7, "top": .6}
             size_hint: .2,.05
+            values: ['2018','2019','2020']
+
+#    Button:
+#        id: btn
+#        text: 'Select Month'
+#        pos_hint: {"center_x": .3, "top": .45}
+#        on_release: dropdown.open(self)
+#        size_hint: .2,.05
+#        #height: '48dp'
+#
+#    Button:
+#        id: btn2
+#        text: 'Select Day'
+#        pos_hint: {"center_x": .5, "top": .45}
+#        on_release: dropdown.open(self)
+#        size_hint: .2,.05
+#        #height: '48dp'
+#
+#    Button:
+#        id: btn3
+#        text: 'Select Year'
+#        pos_hint: {"center_x": .7, "top": .45}
+#        on_release: dropdown.open(self)
+#        size_hint: .2,.05
+#        #height: '48dp'
+#
+#    DropDown:
+#        id: dropdown
+#        #on_parent: self.dismiss()
+#        on_select: btn.text = '{}'.format(args[1])
+#
+#        Button:
+#            text: 'First Item'
+#            size_hint_y: None
+#            height: '48dp'
+#            on_release: dropdown.select('First Item','test')
+#
+#        Button:
+#            text: 'Second Item'
+#            size_hint_y: None
+#            height: '48dp'
+#            on_release: dropdown.select('Second Item')
+#
+#        Button:
+#            text: 'Third Item'
+#            size_hint_y: None
+#            height: '48dp'
+#            on_release: dropdown.select('Third Item')
 
 
+    MiniButton:
+        text: "Submit"
+        pos_hint: {"center_x": .2 , "center_y": .1}
+#        on_press:
+#            root.get_date(month, day, year) #send this expiration date to database
+#            root.search_item(barcode_number) #send the item information with barcode to database
 
+    MiniButton:
+        text: "Other"
+        pos_hint: {"center_x": .33, "center_y": .1}
 
-
-        MiniButton:
-            text: "Submit"
-            pos_hint: {"center_x": .2 , "center_y": .1}
-
-        MiniButton:
-            text: "Other"
-            pos_hint: {"center_x": .33, "center_y": .1}
-
-        MiniButton:
-            text: "Cancel"
-            pos_hint: {"center_x": .46, "center_y": .1}
-            on_press:
-                app.root.transition.direction = "down"
-                app.root.current = "inventory_screen"
+    MiniButton:
+        text: "Cancel"
+        pos_hint: {"center_x": .46, "center_y": .1}
+        on_press:
+            app.root.transition.direction = "down"
+            app.root.current = "inventory_screen"
 
 
 

@@ -8,6 +8,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.listview import ListItemButton
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.listview import ListItemButton, ListItemLabel, CompositeListItem, ListView
+from kivy.uix.spinner import Spinner
 from kivy.uix.popup import Popup
 from kivy.uix.recycleview import RecycleView
 from kivy.uix.recycleview.views import RecycleDataViewBehavior
@@ -124,8 +125,10 @@ class AddItemScreen(Screen):
         else:
             print("no barcode entered")
 
-    def join_date(self, month, day, year):
-        print(month.text+"/"+day.text+"/"+year.text)
+    def get_date(self, month, day, year):
+        if month.text == "Select Month" or day.text == "Select Day" or year.text == "Select Year":
+            print("Invalid Expiration Date")
+        else: print(month.text+"/"+day.text+"/"+year.text)
 
 class GroceryLoggerApp(App):
     def build(self):

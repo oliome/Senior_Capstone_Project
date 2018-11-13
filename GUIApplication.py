@@ -130,7 +130,7 @@ class MyScreenManager(ScreenManager):
     def update_buttons(self,*args):
         
         #self.box2.clear_widgets()
-        shuffle(self.added_buttons)
+        #shuffle(self.added_buttons)
 
         for i in self.added_buttons:
             name = i.text
