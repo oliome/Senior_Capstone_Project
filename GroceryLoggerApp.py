@@ -11,6 +11,12 @@ import json
 import requests
 
 my_list = ['Zack','Ollie','Rehan','Aaron']
+item_list = ObjectProperty()
+
+
+
+class ItemListButton(ListItemButton):
+    pass
 
 
 #instance is the last button added
@@ -52,7 +58,7 @@ class MyScreenManager(ScreenManager):
 
     def search_item(self, barcode_number):
         if barcode_number.text != '':
-            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
+            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=vwsib6fj958n3v9vtjt7sgtch7xclr')
             data = r.json()
             # displaying in json format
             item = data['products'][0]['product_name']
@@ -85,8 +91,7 @@ class MyScreenManager(ScreenManager):
                 for recipe in data1['ingredientLines']:
                     print(recipe)  
      
-class ItemListButton(ListItemButton):
-    pass
+
   
 class GroceryLoggerApp(App):
 

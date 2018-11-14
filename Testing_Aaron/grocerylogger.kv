@@ -146,7 +146,7 @@
             #list of item names
             ListView:
                 id: item_list_view
-                adapter: ListAdapter(data=["Great Value Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='multiple')
+                adapter: ListAdapter(data=["Great Value Milk                01/01/2020              1241234124213","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='multiple')
 #                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
             #list of expiration dates
             #ListView:
@@ -183,7 +183,7 @@
     FloatLayout:
         StandardButton:
             text: "Back to Inventory"
-            pos_hint: {"top": .9}
+            pos_hint: {"center_x": .8, "top": .9}
             on_press:
                 app.root.transition.direction = "down"
                 app.root.current = "inventory_screen"
@@ -191,6 +191,10 @@
         HeaderButton:
             text: "Add Item"
             pos_hint: {"center_x": .5, "top": 1}
+
+        Label:
+            text: "test"
+            pos_hint: {"center_x": .8, "top": .9}
 
         TextInput:
             id: barcode_number
@@ -308,23 +312,23 @@
 #            on_release: dropdown.select('Third Item')
 
 
-    MiniButton:
-        text: "Submit"
-        pos_hint: {"center_x": .2 , "center_y": .1}
-#        on_press:
-#            root.get_date(month, day, year) #send this expiration date to database
-#            root.search_item(barcode_number) #send the item information with barcode to database
+        MiniButton:
+            text: "Submit"
+            pos_hint: {"center_x": .2 , "center_y": .1}
+    #        on_press:
+    #            root.get_date(month, day, year) #send this expiration date to database
+    #            root.search_item(barcode_number) #send the item information with barcode to database
 
-    MiniButton:
-        text: "Other"
-        pos_hint: {"center_x": .33, "center_y": .1}
+        MiniButton:
+            text: "Other"
+            pos_hint: {"center_x": .33, "center_y": .1}
 
-    MiniButton:
-        text: "Cancel"
-        pos_hint: {"center_x": .46, "center_y": .1}
-        on_press:
-            app.root.transition.direction = "down"
-            app.root.current = "inventory_screen"
+        MiniButton:
+            text: "Cancel"
+            pos_hint: {"center_x": .46, "center_y": .1}
+            on_press:
+                app.root.transition.direction = "down"
+                app.root.current = "inventory_screen"
 
 
 

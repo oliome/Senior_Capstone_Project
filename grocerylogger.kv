@@ -10,6 +10,7 @@
     font_size: 16
     size_hint: .1, .1
 
+
 <StandardButton@Button>:
     font_size: 16
 
@@ -21,6 +22,8 @@
 
 <MyScreenManager>:
     box2: box2
+
+    item_list: item_list_view
 #----------SPLASH SCREEN--------------------------------------------------
     Screen:
         name: "splash_screen"
@@ -125,8 +128,6 @@
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
         name:"inventory_screen"
-        item_list: item_list_view
-
         FloatLayout:
             StandardButton:
                 text: "Back to Main Menu"
@@ -159,7 +160,7 @@
                 pos_hint: {"top": .7}
                 ListView:
                     id: item_list_view
-                    adapter: ListAdapter(data=["Great Value Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='multiple')
+                    adapter: ListAdapter(data=["Great Value Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='single')
 #                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
 
 
@@ -173,7 +174,7 @@
                 text: "Search Recipes"
                 pos_hint: {"center_x": .38, "center_y": .1}
                 on_press:
-                    root.search_recipes()
+                    app.root.search_recipes()
 
             MiniButton:
                 text: "Add"

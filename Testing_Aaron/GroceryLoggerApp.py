@@ -8,20 +8,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.listview import ListItemButton
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.listview import ListItemButton, ListItemLabel, CompositeListItem, ListView
-from kivy.uix.spinner import Spinner
-from kivy.uix.popup import Popup
-from kivy.uix.recycleview import RecycleView
-from kivy.uix.recycleview.views import RecycleDataViewBehavior
-from kivy.uix.label import Label
-from kivy.properties import BooleanProperty
-from kivy.uix.recycleboxlayout import RecycleBoxLayout
-from kivy.uix.recyclegridlayout import RecycleGridLayout
-from kivy.uix.behaviors import FocusBehavior
-from kivy.uix.recycleview.layout import LayoutSelectionBehavior
-from kivy.adapters.listadapter import ListAdapter
-from kivy.adapters.dictadapter import DictAdapter
-from kivy.uix.gridlayout import GridLayout
-from kivy.properties import StringProperty
+
 
 
 
@@ -80,7 +67,7 @@ class MenuScreen(Screen):
 
 
 class InventoryScreen(Screen):
-    item_list = ObjectProperty()
+    #item_list = ObjectProperty()
 
     items = ["Great Value 2% Milk", "12/25/18", "078742022871", "Tyson Frozen Chicken", "JIF Peanut Butter 40oz",
              "Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk",
@@ -95,13 +82,17 @@ class InventoryScreen(Screen):
         pass
 
     def search_recipes(self):
+        print("check1")
         #if a list item is selected
         if self.item_list.adapter.selection:
+            print("check2")
             selection = self.item_list.adapter.selection[0].text
+            print("check3")
             App_ID = 'cf938db6'
             APP_KEY = '91a43a29d2211953084fcca6b71b005b'
             r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
             data = r.json()
+            print("check4")
             for i in data['hits']:
                 print('*****************************')
                 print('*****************************')
