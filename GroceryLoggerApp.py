@@ -72,7 +72,10 @@ class MyScreenManager(ScreenManager):
     def get_date(self, month, day, year):
         if month.text == "Select Month" or day.text == "Select Day" or year.text == "Select Year":
             print("Invalid Expiration Date")
-        else: print(month.text+"/"+day.text+"/"+year.text)
+        else:
+            date = month.text+"/"+day.text+"/"+year.text
+            self.ids.expdate.text = date
+            print(date)
 
     def search_recipes(self):
         #if a list item is selected

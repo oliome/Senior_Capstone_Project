@@ -160,10 +160,10 @@
                 pos_hint: {"top": .7}
                 ListView:
                     id: item_list_view
-                    adapter: ListAdapter(data=["Great Value Milk","Tyson Frozen Chicken","JIF Creamy Peanut Butter","Chipotle Tabasco", "Kraft Cheddar Cheese", "Lay's Sour Cream and Onion Chips", "Great Value 2% Milk"], cls=main.ItemListButton, selection_mode='single')
+                    adapter: ListAdapter(data=["Great Value Milk, Expires: 12/01/2018, Barcode/UPC #: 078742022871","Tyson Frozen Chicken, Expires: 12/01/2018, Barcode/UPC #: 078742022871","JIF Creamy Peanut Butter, Expires: 12/01/2018, Barcode/UPC #: 078742022871","Chipotle Tabasco, Expires: 12/01/2018, Barcode/UPC #: 078742022871", "Kraft Cheddar Cheese, Expires: 12/01/2018, Barcode/UPC #: 078742022871", "Lay's Sour Cream and Onion Chips, Expires: 12/01/2018, Barcode/UPC #: 078742022871", "Great Value Milk, Expires: 12/01/2018, Barcode/UPC #: 078742022871"], cls=main.ItemListButton, selection_mode='single')
 #                adapter: ListAdapter(data=["Great Value 2% Milk                                           12/25/18                                         123412346","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips","Great Value 2% Milk","Tyson Frozen Chicken","JIF Peanut Butter 40oz","Chipotle Tabasco","Kraft Cheddar Cheese","Lay's Sour Cream and Onion Chips"], cls=main.ItemListButton)
 
-
+#               barcode for milk: 078742022871
 
             MiniButton:
                 text: "Delete"
@@ -188,10 +188,15 @@
         on_leave: root.ids.barcode_number.text = ''
         on_enter: root.ids.barcode_number.focus = True
         on_leave: root.ids.itemname.text = ''
+        on_leave: root.ids.expdate.text = ''
         FloatLayout:
             Label:
                 id: itemname
                 pos_hint: {"center_x": .7, "top": .8}
+                text: ""
+            Label:
+                id: expdate
+                pos_hint: {"center_x": .7, "top": .7}
                 text: ""
             HeaderButton:
                 text: "Add Item"
