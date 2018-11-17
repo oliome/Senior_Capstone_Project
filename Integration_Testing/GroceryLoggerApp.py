@@ -34,6 +34,7 @@ class MyScreenManager(ScreenManager):
           
     def make_buttons(self, name):
         newbutton = Button(text=name)
+        create_profile(name)
         newbutton.bind(on_press = partial(lambda a:self.auth(name)))
         self.added_buttons.append(newbutton)
     
