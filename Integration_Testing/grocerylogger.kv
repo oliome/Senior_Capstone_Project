@@ -39,7 +39,9 @@
 #----------PROFILE SCREEN--------------------------------------------------
     Screen:
         name: "profile_screen"
-        on_enter: root.update_buttons()
+        on_enter: 
+            root.box2.clear_widgets()
+            root.update_buttons()
 
         HeaderButton:
             text: "Profile Select"
@@ -117,7 +119,7 @@
                     root.transition.direction = "left"
                     root.current = "inventory_screen"
         GridLayout:
-            cols: 1
+            cols: 2
             size_hint: .2, .1
             pos_hint: {"center_x": .5}
             Button:
@@ -125,6 +127,14 @@
                 on_press:
                     root.transition.direction = "right"
                     root.current = "profile_screen"
+
+            Button:
+                text: "Delete Profile"
+                on_press:
+                    root.delete_buttons()
+                    root.transition.direction = "right"
+                    root.current = "profile_screen"
+                    
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
         name:"inventory_screen"

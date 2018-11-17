@@ -10,10 +10,11 @@ from SQLite_test import *
 import json
 import requests
 
+profile_table_setup()
 my_list = select_all_profiles()
 item_list = ObjectProperty()
-
-
+global current_user
+current_user=""
 
 class ItemListButton(ListItemButton):
     pass
@@ -33,29 +34,50 @@ class MyScreenManager(ScreenManager):
           
           
     def make_buttons(self, name):
-        newbutton = Button(text=name)
-        create_profile(name)
+        newbutton = Button(text=name, id = name)
         newbutton.bind(on_press = partial(lambda a:self.auth(name)))
         self.added_buttons.append(newbutton)
-    
-    def update_buttons(self,*args):
-        
-        #self.box2.clear_widgets()
-        #shuffle(self.added_buttons) why was this being shuffled in the first place?
 
+    def delete_buttons(self):
+        global current_user
+        delete_profile(current_user)
+
+    def create(self,*args):
+        self.current = "create_screen"
+
+    def update_buttons(self):
+
+        #self.box2.clear_widgets()
+        shuffle(self.added_buttons)
+        add_user = Button(text="Add New Profile")
+        add_user.bind(on_press = self.create)
+        self.box2.add_widget(add_user)
         for i in self.added_buttons:
             name = i.text
-            i.bind(on_press= partial(lambda a:self.auth(name)))
-            self.box2.add_widget(i)
+            print(i.text)
+            if (name not in select_all_profiles()):
+                create_profile(name)
+        for j in select_all_profiles():
+            newbutton = Button(text=j, id = j)
+            newbutton.bind(on_press = partial(lambda a:self.auth(j)))
+            self.box2.add_widget(newbutton)
+            self.added_buttons.append(newbutton)
+        #for j in self.added_buttons:
+         #   name = j.text
+          #  j.bind(on_press= partial(lambda a:self.auth(name)))
+           # self.box2.add_widget(j)
             
             
             
-        self.added_buttons[:] = []
+        self.added_buttons[:]=[]
 
     def auth(self,instance):
         self.transition.direction = "left"
         self.current = "menu_screen"
+        global current_user
+        current_user = instance
         self.ids.bannerbutton.text = "Welcome " + instance + "!"
+
 
     def search_item(self, barcode_number):
         if barcode_number.text != '':
