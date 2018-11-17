@@ -65,9 +65,10 @@ def select_all_profiles():
     cur.execute("SELECT * FROM profiles;")
  
     rows = cur.fetchall()
-    
+    array=[]
     for row in rows:
-        print(row[0]+", "+row[1])
+        array.append(row[0])
+    return array
  
 def select_inventory(name):
     """
@@ -113,19 +114,22 @@ def select_profile_db(name):
     cur.execute("SELECT name FROM profiles WHERE name=\""+name+"\";")
  
     rows = cur.fetchall()
- 
+    array=[]
     for row in rows:
-        print(row[0])
-
+        array.append(row[0])
+    return array
 
  
  
-def main():
+#def main():
 
-         profile_table_setup()
+        #profile_table_setup()
+
         #--------Add Profile Test------------
-        #add = raw_input("Name you would like to add:")
-        #create_profile(conn,add)
+        #add = input("Name you would like to add:")
+        #create_profile(add)
+
+        #print(select_all_profiles())
 
         #-------Delete Profile Test----------
         #delete= input("Name you would like to delete:")
@@ -140,5 +144,5 @@ def main():
         #select_all_profiles(conn)
  
  
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
