@@ -40,6 +40,9 @@ class MyScreenManager(ScreenManager):
 
     def delete_buttons(self):
         global current_user
+        for i in self.box2.children:
+            if i.text==current_user:
+                self.box2.remove_widget(i)
         delete_profile(current_user)
 
     def create(self,*args):
@@ -48,24 +51,24 @@ class MyScreenManager(ScreenManager):
     def update_buttons(self):
 
         #self.box2.clear_widgets()
-        shuffle(self.added_buttons)
+        #shuffle(self.added_buttons)
         add_user = Button(text="Add New Profile")
         add_user.bind(on_press = self.create)
-        self.box2.add_widget(add_user)
+        #self.box2.add_widget(add_user)
         for i in self.added_buttons:
             name = i.text
             print(i.text)
             if (name not in select_all_profiles()):
                 create_profile(name)
-        for j in select_all_profiles():
-            newbutton = Button(text=j, id = j)
-            newbutton.bind(on_press = partial(lambda a:self.auth(j)))
-            self.box2.add_widget(newbutton)
-            self.added_buttons.append(newbutton)
-        #for j in self.added_buttons:
-         #   name = j.text
-          #  j.bind(on_press= partial(lambda a:self.auth(name)))
-           # self.box2.add_widget(j)
+        #for j in select_all_profiles():
+         #   newbutton = Button(text=j, id = j)
+          #  newbutton.bind(on_press = partial(lambda a:self.auth(j)))
+           # self.box2.add_widget(newbutton)
+            #self.added_buttons.append(newbutton)
+        for j in self.added_buttons:
+            name = j.text
+            j.bind(on_press= partial(lambda a:self.auth(name)))
+            self.box2.add_widget(j)
             
             
             
