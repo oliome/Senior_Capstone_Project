@@ -56,7 +56,7 @@ class MyScreenManager(ScreenManager):
         for i in self.box2.children:
             if i.text==current_user:
                 self.box2.remove_widget(i)
-        #delete_profile(current_user)
+        delete_profile(current_user)
         popup.dismiss()
 
     def create(self,*args):
