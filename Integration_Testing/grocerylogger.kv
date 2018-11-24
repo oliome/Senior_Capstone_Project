@@ -2,6 +2,28 @@
 #: import ListItemButton kivy.uix.listview.ListItemButton
 #: import Button kivy.uix.button.Button
 #: import main GroceryLoggerApp
+#:import Factory kivy.factory.Factory
+<MessageBox>:
+    pos_hint: {'x': .3, 'y': .4}
+    size_hint: (None, None)
+    size: (400, 150)
+    title_align: 'center'
+    title: 'Are you sure you want to delete this profile?'
+    
+    BoxLayout:
+        Button:
+            text: 'Delete'
+            on_press:
+                root.dismiss()
+                root.obj.delete_buttons()
+                root.obj.transition.direction = "right"
+                root.obj.current = "profile_screen"
+                
+        Button:
+            text: 'Cancel'
+            on_release: root.dismiss()
+
+
 
 <HeaderButton@Button>:
     font_size: 20
@@ -96,6 +118,7 @@
     Screen:
         name: "menu_screen"
 
+
         HeaderButton:
             id: bannerbutton
 #            font_size: 15
@@ -120,20 +143,24 @@
                     root.current = "inventory_screen"
         GridLayout:
             cols: 2
-            size_hint: .2, .1
+            size_hint: .3, .1
+            spacing: 1
             pos_hint: {"center_x": .5}
             Button:
+                
                 text: "Switch Profile"
                 on_press:
                     root.transition.direction = "right"
                     root.current = "profile_screen"
 
             Button:
+                
                 text: "Delete Profile"
                 on_press:
-                    root.delete_buttons()
-                    root.transition.direction = "right"
-                    root.current = "profile_screen"
+                    #root.delete_buttons()
+                    #root.transition.direction = "right"
+                    #root.current = "profile_screen"
+                    Factory.MessageBox(root).open()
                     
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
@@ -177,18 +204,18 @@
 
             MiniButton:
                 text: "Delete"
-                pos_hint: {"center_x": .2 , "center_y": .1}
+                pos_hint: {"center_x": .35 , "center_y": .1}
 
             StandardButton:
                 id: search
                 text: "Search Recipes"
-                pos_hint: {"center_x": .38, "center_y": .1}
+                pos_hint: {"center_x": .5, "center_y": .1}
                 on_press:
                     app.root.search_recipes()
 
             MiniButton:
                 text: "Add"
-                pos_hint: {"center_x": .56, "center_y": .1}
+                pos_hint: {"center_x": .65, "center_y": .1}
                 on_press:
                     root.transition.direction = "up"
                     root.current = "additem_screen"

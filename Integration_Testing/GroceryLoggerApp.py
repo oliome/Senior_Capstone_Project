@@ -4,6 +4,8 @@ from kivy.lang import Builder
 from kivy.properties  import ListProperty, ObjectProperty
 from kivy.uix.listview import ListItemButton, ListItemLabel, CompositeListItem, ListView
 from kivy.uix.button import Button
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
 from random import shuffle
 from functools import partial
 from SQLite_test import *
@@ -19,6 +21,10 @@ current_user="Zack"
 class ItemListButton(ListItemButton):
     pass
 
+class MessageBox(Popup):
+    def __init__(self, obj, **kwargs):
+        super(MessageBox, self).__init__(**kwargs)
+        self.obj = obj
 
 #instance is the last button added
 class MyScreenManager(ScreenManager):
@@ -44,11 +50,14 @@ class MyScreenManager(ScreenManager):
 
 
     def delete_buttons(self):
+        popup = MessageBox(self)    # pass screen1 object
+        popup.open()
         global current_user
         for i in self.box2.children:
             if i.text==current_user:
                 self.box2.remove_widget(i)
-        delete_profile(current_user)
+        #delete_profile(current_user)
+        popup.dismiss()
 
     def create(self,*args):
         self.current = "create_screen"
