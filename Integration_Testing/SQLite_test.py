@@ -94,7 +94,6 @@ def select_inventory(name):
         for row in rows:
                 if len(row[1]) > max_len:
                         max_len=len(row[1])
-        print(max_len)
         for row in rows:
                 temp=str(row[1])
                 x=0
