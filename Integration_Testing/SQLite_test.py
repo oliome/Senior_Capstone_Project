@@ -89,11 +89,12 @@ def select_inventory(name):
         cur.execute("SELECT * FROM "+str(name.lower())+"_db")
     
         rows = cur.fetchall()
-    
+        array=[]
         for row in rows:
-            print(row[0])
+            array.append(str(row[1])+" "+str(row[2])+" "+str(row[0]))
+        return array
 
-def add_inventory(name):
+def add_inventory(name,barcode,item_name,exp_date):
     """
     Query tasks by priority
     :param conn: the Connection object
@@ -103,12 +104,7 @@ def add_inventory(name):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("INSERT INTO "+str(name.lower())+" (name,user_db) values (\""+str(name)+"\",\""+str(name.lower())+"_db\")")
-    
-        rows = cur.fetchall()
-    
-        for row in rows:
-            print(row[0])
+        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+barcode+",\""+item_name+"\",\""+exp_date+"\")")
 
 def select_profile_db(name):
     """
@@ -126,6 +122,7 @@ def select_profile_db(name):
         array=[]
         for row in rows:
             array.append(row[0])
+        print(array)
         return array
 
  
@@ -150,7 +147,16 @@ def select_profile_db(name):
         #-------Show All Profiles Test-------
         #print("\n2. Query all profiles")
         #select_all_profiles(conn)
+
+        #-------Add Item Test---------
+        #name=input("Database name: ")
+        #barcode=input("Barcode: ")
+        #item_name=input("Item name: ")
+        #exp_date=input("Exp Date(YYYY-MM-DD): ")
+        #add_inventory(name,barcode,item_name,exp_date)
+
+        #select_inventory("Zack")
  
  
 #if __name__ == '__main__':
-#    main()
+#   main()

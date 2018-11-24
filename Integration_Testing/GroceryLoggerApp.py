@@ -14,7 +14,7 @@ profile_table_setup()
 my_list = select_all_profiles()
 item_list = ObjectProperty()
 global current_user
-current_user=""
+current_user="Zack"
 
 class ItemListButton(ListItemButton):
     pass
@@ -37,6 +37,11 @@ class MyScreenManager(ScreenManager):
         newbutton = Button(text=name, id = name)
         newbutton.bind(on_press = partial(lambda a:self.auth(name)))
         self.added_buttons.append(newbutton)
+
+    def show_inventory(self):
+        print(current_user)
+        return select_inventory(current_user)
+
 
     def delete_buttons(self):
         global current_user
