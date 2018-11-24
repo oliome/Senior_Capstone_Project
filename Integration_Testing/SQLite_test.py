@@ -90,8 +90,26 @@ def select_inventory(name):
     
         rows = cur.fetchall()
         array=[]
+        max_len=0
         for row in rows:
-            array.append(str(row[1])+" "+str(row[2])+" "+str(row[0]))
+                if len(row[1]) > max_len:
+                        max_len=len(row[1])
+        print(max_len)
+        for row in rows:
+                temp=str(row[1])
+                x=0
+                pad=" "
+                length= len(temp)
+                if length < max_len:
+                        temp=(pad*(max_len-length)*2)+" "+temp
+
+                while x <= (58-length):
+                        temp= temp+pad
+                        x+=1
+                temp=temp+str(row[2])+pad*48+str(row[0])
+                if length < max_len:
+                        temp=temp+(pad*(max_len-length))
+                array.append(temp)
         return array
 
 def add_inventory(name,barcode,item_name,exp_date):
