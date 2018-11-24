@@ -125,6 +125,13 @@
 #            size_hint_y: .04
             text: ""
             pos_hint: {"center_x": .5, "top": 1}
+        HeaderButton:
+            id: experationbutton
+#            font_size: 15
+#            size_hint_y: .04
+            text: ""
+            pos_hint: {"center_x": .5, "bottom": 1}
+
         GridLayout:
             cols: 2
             size_hint: .7, .2
@@ -145,7 +152,7 @@
             cols: 2
             size_hint: .3, .1
             spacing: 1
-            pos_hint: {"center_x": .5}
+            pos_hint: {"center_x": .5,'center_y': .1}
             Button:
                 
                 text: "Switch Profile"
