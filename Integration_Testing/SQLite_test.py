@@ -75,7 +75,22 @@ def select_all_profiles():
         for row in rows:
             array.append(row[0])
         return array
- 
+
+def count_exp(name):
+    """
+    Query tasks by priority
+    :param conn: the Connection object
+    :param name: name of profile wanted
+    :return:
+    """
+    conn = create_connection()
+    with conn:
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM `"+str(name.lower())+"_db` WHERE exp > date('now', '+7 days');")
+    
+        rows = cur.fetchall()
+        return rows[0][0]
+
 def select_inventory(name):
     """
     Query tasks by priority
