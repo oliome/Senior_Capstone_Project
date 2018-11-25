@@ -94,13 +94,15 @@
                 font_size: 32
                 background_normal: ''
                 background_color: 1, .3, .4, .85
-                text: "Gro - Log"
+                text: "Gro - Log\n\nVirtual Pantry Logging System"
+                halign: 'center'
                 on_release:
                     root.current = "profile_screen"
 #----------PROFILE SCREEN--------------------------------------------------
     Screen:
         name: "profile_screen"
         on_enter: root.update_buttons()
+
 
         HeaderButton:
             text: "Profile Select"
@@ -120,8 +122,14 @@
         name: "create_screen"
         on_leave: root.ids.textinput.text = ''
         on_enter: root.ids.textinput.focus = True
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
         Popup:
-            title: 'What is your name?'
+            title: 'Profile Creation'
             title_align: 'center'
             auto_dismiss: False
             content: box
@@ -133,7 +141,7 @@
                 TextInput:
                     id: textinput
                     focus: True
-                    text: ''
+                    hint_text: 'Enter Profile Name'
                     multiline: False
                     font_size: 24
                     on_text_validate: root.added_buttons.append(Button(text=root.ids.textinput.text))

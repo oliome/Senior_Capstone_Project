@@ -26,6 +26,9 @@ class MessageBox(Popup):
         super(MessageBox, self).__init__(**kwargs)
         self.obj = obj
 
+class OtherItems(Popup):
+    pass
+
 #instance is the last button added
 class MyScreenManager(ScreenManager):
     added_buttons = ListProperty([])
@@ -87,6 +90,10 @@ class MyScreenManager(ScreenManager):
             
             
         self.added_buttons[:]=[]
+
+    def open_popup(self):
+        popup = OtherItems()
+        popup.open()
 
     def auth(self,instance):
         self.transition.direction = "left"
