@@ -225,6 +225,7 @@
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
         name:"inventory_screen"
+        #on_enter:
         FloatLayout:
             StandardButton:
                 text: "Back to Main Menu"
@@ -249,12 +250,13 @@
                 Button:
                     text: "Barcode/UPC Number"
 
-
+            #add the ability to populate this list of items on entering screen instead of when opening app
             GridLayout:
                 cols: 3
 
                 padding: [0,0,0,300]
                 pos_hint: {"top": .7}
+#                on_enter:
                 ListView:
                     id: item_list_view
                     adapter: ListAdapter(data=root.show_inventory(), cls=main.ItemListButton, selection_mode='single')
@@ -363,13 +365,13 @@
                 font_size: 16
                 size_hint: .1, .1
                 text: "Submit"
-                pos_hint: {"center_x": .2 , "center_y": .1}
+                pos_hint: {"center_x": .4 , "center_y": .1}
 
             Button:
                 font_size: 16
                 size_hint: .1, .1
                 text: "Other"
-                pos_hint: {"center_x": .33, "center_y": .1}
+                pos_hint: {"center_x": .5, "center_y": .1}
                 on_press:
                     root.open_popup()
 
@@ -377,7 +379,7 @@
                 font_size: 16
                 size_hint: .1, .1
                 text: "Cancel"
-                pos_hint: {"center_x": .46, "center_y": .1}
+                pos_hint: {"center_x": .6, "center_y": .1}
                 on_press:
                     root.transition.direction = "down"
                     root.current = "inventory_screen"
