@@ -1,9 +1,17 @@
-from kivy.app  import App
+from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
 from kivy.properties  import ListProperty, ObjectProperty
 from kivy.uix.listview import ListItemButton, ListItemLabel, CompositeListItem, ListView
+from kivy.adapters.dictadapter import ListAdapter
 from kivy.uix.button import Button
+from kivy.uix.recycleview.views import RecycleDataViewBehavior
+from kivy.uix.recycleview import RecycleView
+from kivy.properties import BooleanProperty
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.behaviors import FocusBehavior
+from kivy.uix.recycleboxlayout import RecycleBoxLayout
+from kivy.uix.recycleview.layout import LayoutSelectionBehavior
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from random import shuffle
@@ -18,8 +26,31 @@ item_list = ObjectProperty()
 global current_user
 current_user="Zack"
 
-class ItemListButton(ListItemButton):
+class InventoryList(ListItemButton):
     pass
+    # def __init__(self, **kwargs):
+    #     kwargs['cols'] = 1
+    #     super(InventoryList, self).__init__(**kwargs)
+    #     self.list_adapter = ListAdapter(data=show,cls=ListItemButton)
+
+    #     list_item_args_converter = \
+    #         lambda row_index, rec: {'text': rec['text'],
+    #                                 'is_selected': rec['is_selected'],
+    #                                 'size_hint_y': None,
+    #                                 'height': 25}
+    #
+    #     dict_adapter = DictAdapter(sorted_keys=[str(i) for i in range(100)],
+    #                                data=['test1','test2'],
+    #                                args_converter=list_item_args_converter,
+    #                                template='CustomListItem')
+    #
+    #     list_view = ListView(adapter=dict_adapter)
+    #
+    #     self.add_widget(list_view)
+
+
+
+
 
 class MessageBox(Popup):
     def __init__(self, obj, **kwargs):
@@ -34,6 +65,9 @@ class MyScreenManager(ScreenManager):
     added_buttons = ListProperty([])
     item_list = ObjectProperty()
     box2 = ObjectProperty(None)
+    rv = ObjectProperty(None)
+    selected = BooleanProperty(False)
+    selectable = BooleanProperty(True)
 
     def __init__(self,*args, **kwargs):
       super().__init__(*args, **kwargs)
@@ -51,6 +85,11 @@ class MyScreenManager(ScreenManager):
         print(current_user)
         return select_inventory(current_user)
 
+    def populate(self):
+        self.rv.data = [{'value': str(x)} for x in {'item1','item2','item3','item4','item5'}]
+
+    def depopulate(self):
+        self.rv.data = []
 
     def delete_buttons(self):
         popup = MessageBox(self)    # pass screen1 object
@@ -86,10 +125,9 @@ class MyScreenManager(ScreenManager):
             name = j.text
             j.bind(on_press= partial(lambda a:self.auth(name)))
             self.box2.add_widget(j)
-            
-            
-            
+
         self.added_buttons[:]=[]
+
 
     def open_popup(self):
         popup = OtherItems()
@@ -101,7 +139,7 @@ class MyScreenManager(ScreenManager):
         global current_user
         current_user = instance
         self.ids.bannerbutton.text = "Welcome " + instance + "!"
-        self.ids.experationbutton.text = "You have "+str(count_exp(instance))+ " items expiring soon!"
+        self.ids.expirationbutton.text = "You have "+str(count_exp(instance))+ " items expiring soon!"
 
 
     def search_item(self, barcode_number):
