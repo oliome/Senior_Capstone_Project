@@ -117,8 +117,6 @@
 #----------MENU SCREEN--------------------------------------------------
     Screen:
         name: "menu_screen"
-
-
         HeaderButton:
             id: bannerbutton
 #            font_size: 15
@@ -172,7 +170,9 @@
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
         name:"inventory_screen"
-        on_enter: item_list_view._trigger_reset_populate()
+        on_enter: root.print()
+        on_leave: root.update_data()
+
         FloatLayout:
             StandardButton:
                 text: "Back to Main Menu"
@@ -200,12 +200,11 @@
 
             GridLayout:
                 cols: 3
-
-                padding: [0,0,0,300]
+                padding: [0,0,0,180]
                 pos_hint: {"top": .7}
                 ListView:
                     id: item_list_view
-                    adapter: ListAdapter(data=root.show_inventory(), cls=main.ItemListButton, selection_mode='single')
+                    
 
 
 #               barcode for milk: 078742022871

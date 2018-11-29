@@ -1,6 +1,7 @@
 from kivy.app  import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
+from kivy.adapters.listadapter import ListAdapter
 from kivy.properties  import ListProperty, ObjectProperty
 from kivy.uix.listview import ListItemButton, ListItemLabel, CompositeListItem, ListView
 from kivy.uix.button import Button
@@ -59,8 +60,19 @@ class MyScreenManager(ScreenManager):
         delete_profile(current_user)
         popup.dismiss()
 
+    def print(self,*args):
+        print("repopulating "+current_user)
+        newView= ListView(id=current_user, adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
+        self.item_list.add_widget(newView)
+
     def create(self,*args):
         self.current = "create_screen"
+
+    def update_data(self):
+        for i in self.item_list.children:
+            if i.id==current_user:
+                self.item_list.remove_widget(i)
+
 
     def update_buttons(self):
 
