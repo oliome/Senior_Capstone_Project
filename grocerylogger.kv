@@ -45,8 +45,8 @@
 
 <MyScreenManager>:
     box2: box2
-
-    item_list: item_list_view
+    grid1: grid_list
+    
 #----------SPLASH SCREEN--------------------------------------------------
     Screen:
         name: "splash_screen"
@@ -170,7 +170,7 @@
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
         name:"inventory_screen"
-        on_enter: root.print()
+        on_enter: root.print_items()
         on_leave: root.update_data()
 
         FloatLayout:
@@ -199,15 +199,14 @@
 
 
             GridLayout:
-                cols: 3
-                padding: [0,0,0,180]
-                pos_hint: {"top": .7}
-                ListView:
-                    id: item_list_view
-                    
-
+                id: grid_list
+                cols: 1
+                padding: [0,180,0,100]
+                pos_hint: {"center_x": .5, "center_y":.5}
+                
 
 #               barcode for milk: 078742022871
+            
 
             MiniButton:
                 text: "Delete"

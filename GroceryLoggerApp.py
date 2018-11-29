@@ -17,7 +17,7 @@ profile_table_setup()
 my_list = select_all_profiles()
 item_list = ObjectProperty()
 global current_user
-current_user="Zack"
+current_user=""
 
 class ItemListButton(ListItemButton):
     pass
@@ -60,18 +60,18 @@ class MyScreenManager(ScreenManager):
         delete_profile(current_user)
         popup.dismiss()
 
-    def print(self,*args):
+    def print_items(self,*args):
         print("repopulating "+current_user)
-        newView= ListView(id=current_user, adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
-        self.item_list.add_widget(newView)
+        newView= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
+        self.grid1.add_widget(newView)
 
     def create(self,*args):
         self.current = "create_screen"
 
     def update_data(self):
-        for i in self.item_list.children:
-            if i.id==current_user:
-                self.item_list.remove_widget(i)
+        for i in self.grid1.children:
+            if i.id=="list_view":
+                self.grid1.remove_widget(i)
 
 
     def update_buttons(self):
