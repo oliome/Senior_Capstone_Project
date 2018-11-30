@@ -60,18 +60,20 @@ class MyScreenManager(ScreenManager):
         delete_profile(current_user)
         popup.dismiss()
 
-    def print_items(self,*args):
-        print("repopulating "+current_user)
+    def populate_inventory(self,*args):
+        print("populating inventory for "+current_user)
         newView= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
         self.grid1.add_widget(newView)
 
-    def create(self,*args):
-        self.current = "create_screen"
-
-    def update_data(self):
+    def depopulate_inventory(self):
         for i in self.grid1.children:
             if i.id=="list_view":
                 self.grid1.remove_widget(i)
+
+    def create(self,*args):
+        self.current = "create_profile_screen"
+
+
 
 
     def update_buttons(self):
@@ -106,7 +108,7 @@ class MyScreenManager(ScreenManager):
         global current_user
         current_user = instance
         self.ids.bannerbutton.text = "Welcome " + instance + "!"
-        self.ids.experationbutton.text = "You have 3 "+ "items expiring soon!"
+        self.ids.expirationbutton.text = "You have 3 "+ "items expiring soon!"
 
 
     def search_item(self, barcode_number):
