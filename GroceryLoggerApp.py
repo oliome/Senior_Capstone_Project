@@ -135,7 +135,8 @@ class MyScreenManager(ScreenManager):
                 self.ids.itemname.text = invalid
                 print(invalid)
         else:
-            return item, ""
+            self.ids.itemname.text = 'its empty bud'
+            print("its empty bud")
 
 
     def get_date(self, month, day, year):
