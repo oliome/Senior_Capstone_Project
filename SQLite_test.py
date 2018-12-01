@@ -42,7 +42,7 @@ def create_profile(name):
         cur = conn.cursor()
         cur.execute("INSERT or IGNORE INTO profiles (name,user_db) values (\""+str(name)+"\",\""+str(name.lower())+"_db\")")
         cur=conn.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS "+str(name.lower())+"_db(barcode INTEGER NOT NULL,item_name STRING NOT NULL, exp DATE)")
+        cur.execute("CREATE TABLE IF NOT EXISTS "+str(name.lower())+"_db(barcode INTEGER,item_name STRING NOT NULL, exp DATE)")
 
 def delete_profile(name):
     """
@@ -136,7 +136,19 @@ def add_inventory(name,item_info):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+item_info[1]+",\""+item_info[0]+"\",\""+item_info[2]e+"\")")
+        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+str(item_info[1])+",\""+str(item_info[0])+"\",\""+str(item_info[2])+"\")")
+
+def delete_inventory(name,item_name):
+    """
+    Query tasks by priority
+    :param conn: the Connection object
+    :param name: name of profile wanted
+    :return:
+    """
+    conn = create_connection()
+    with conn:
+        cur = conn.cursor()
+        cur.execute("DELETE FROM "+str(name.lower())+" WHERE item_name=\""+item_name+"\"")
 
 def select_profile_db(name):
     """
