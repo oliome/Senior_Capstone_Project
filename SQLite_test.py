@@ -42,7 +42,7 @@ def create_profile(name):
         cur = conn.cursor()
         cur.execute("INSERT or IGNORE INTO profiles (name,user_db) values (\""+str(name)+"\",\""+str(name.lower())+"_db\")")
         cur=conn.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS "+str(name.lower())+"_db(barcode INTEGER NOT NULL,item_name STRING NOT NULL, exp DATE)")
+        cur.execute("CREATE TABLE IF NOT EXISTS "+str(name.lower())+"_db(barcode INTEGER,item_name STRING NOT NULL, exp DATE)")
 
 def delete_profile(name):
     """
@@ -75,7 +75,22 @@ def select_all_profiles():
         for row in rows:
             array.append(row[0])
         return array
- 
+
+def count_exp(name):
+    """
+    Query tasks by priority
+    :param conn: the Connection object
+    :param name: name of profile wanted
+    :return:
+    """
+    conn = create_connection()
+    with conn:
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM `"+str(name.lower())+"_db` WHERE exp > date('now', '+7 days');")
+    
+        rows = cur.fetchall()
+        return rows[0][0]
+
 def select_inventory(name):
     """
     Query tasks by priority
@@ -111,7 +126,7 @@ def select_inventory(name):
                 array.append(temp)
         return array
 
-def add_inventory(name,barcode,item_name,exp_date):
+def add_inventory(name,item_info):
     """
     Query tasks by priority
     :param conn: the Connection object
@@ -121,7 +136,19 @@ def add_inventory(name,barcode,item_name,exp_date):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+barcode+",\""+item_name+"\",\""+exp_date+"\")")
+        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+str(item_info[1])+",\""+str(item_info[0])+"\",\""+str(item_info[2])+"\")")
+
+def delete_inventory(name,item_name):
+    """
+    Query tasks by priority
+    :param conn: the Connection object
+    :param name: name of profile wanted
+    :return:
+    """
+    conn = create_connection()
+    with conn:
+        cur = conn.cursor()
+        cur.execute("DELETE FROM "+str(name.lower())+" WHERE item_name=\""+item_name+"\"")
 
 def select_profile_db(name):
     """
