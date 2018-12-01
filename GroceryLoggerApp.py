@@ -120,23 +120,20 @@ class MyScreenManager(ScreenManager):
 
     def search_item(self, barcode_number):
         item = ""
-        if barcode_number.text != '':
-            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
-            if (r.status_code == 200):
-                data = r.json()
-                # displaying in json format
-                item = data['products'][0]['product_name']
-                # grabbing the brand property from the products array. Debug for more info
-                self.ids.itemname.text = item
-                print(item)
-                print(barcode_number.text)
-            else:
-                invalid = "Invalid barcode or name"
-                self.ids.itemname.text = invalid
-                print(invalid)
+        r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
+        if (r.status_code == 200 or barcode_number.text != ''):
+            data = r.json()
+            # displaying in json format
+            item = data['products'][0]['product_name']
+            # grabbing the brand property from the products array. Debug for more info
+            self.ids.itemname.text = item
+            print(item)
+            print(barcode_number.text)
         else:
-            self.ids.itemname.text = 'its empty bud'
-            print("its empty bud")
+            invalid = "Invalid barcode or name"
+            self.ids.itemname.text = invalid
+            print(invalid)
+
 
 
     def get_date(self, month, day, year):
