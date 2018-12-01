@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="877cbae9-45d1-4527-8a04-481444e93c1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Integration_Testing/GroceryLoggerApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Integration_Testing/GroceryLoggerApp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Integration_Testing/gro_log.db" beforeDir="false" afterPath="$PROJECT_DIR$/Integration_Testing/gro_log.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Integration_Testing/grocerylogger.kv" beforeDir="false" afterPath="$PROJECT_DIR$/Integration_Testing/grocerylogger.kv" afterDir="false" />
-    </list>
+    <list default="true" id="877cbae9-45d1-4527-8a04-481444e93c1b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,34 +9,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_kv.coverage" NAME="list_kv Coverage Results" MODIFIED="1541885317242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GUIApplication.coverage" NAME="GUIApplication Coverage Results" MODIFIED="1542078890157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_master_detail.coverage" NAME="list_master_detail Coverage Results" MODIFIED="1541966921485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1541966733663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_composite.coverage" NAME="list_composite Coverage Results" MODIFIED="1541966737298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GUIApplication__1_.coverage" NAME="GUIApplication (1) Coverage Results" MODIFIED="1542066471313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$test.coverage" NAME="test Coverage Results" MODIFIED="1541884336954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp__1_.coverage" NAME="GroceryLoggerApp (1) Coverage Results" MODIFIED="1543441811187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project_2$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1542507106069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen.coverage" NAME="ProfileScreen Coverage Results" MODIFIED="1541451175960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen__1_.coverage" NAME="ProfileScreen (1) Coverage Results" MODIFIED="1541271879836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$Rvtest.coverage" NAME="Rvtest Coverage Results" MODIFIED="1541702563764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenSwitch.coverage" NAME="ScreenSwitch Coverage Results" MODIFIED="1541183812274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GUIApplication.coverage" NAME="GUIApplication Coverage Results" MODIFIED="1542078890157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$screenmanager.coverage" NAME="screenmanager Coverage Results" MODIFIED="1541273911168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$Guimain10_13_18.coverage" NAME="Guimain10_13_18 Coverage Results" MODIFIED="1540350921540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp__2_.coverage" NAME="GroceryLoggerApp (2) Coverage Results" MODIFIED="1543102956299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$CapstoneGui.coverage" NAME="CapstoneGui Coverage Results" MODIFIED="1542059663065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$SQLite_test.coverage" NAME="SQLite_test Coverage Results" MODIFIED="1541886700611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration_Testing" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$fruit_detail_view.coverage" NAME="fruit_detail_view Coverage Results" MODIFIED="1541968159767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenManager.coverage" NAME="ScreenManager Coverage Results" MODIFIED="1541186535064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1543448605283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration_Testing" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen__1_.coverage" NAME="ProfileScreen (1) Coverage Results" MODIFIED="1541271879836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$CapstoneGui__1_.coverage" NAME="CapstoneGui (1) Coverage Results" MODIFIED="1541183731396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen__2_.coverage" NAME="ProfileScreen (2) Coverage Results" MODIFIED="1541184034884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$scrollview.coverage" NAME="scrollview Coverage Results" MODIFIED="1541279743517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$Rvtest.coverage" NAME="Rvtest Coverage Results" MODIFIED="1541702563764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenSwitch__1_.coverage" NAME="ScreenSwitch (1) Coverage Results" MODIFIED="1541130095759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileTesting" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLogger.coverage" NAME="GroceryLogger Coverage Results" MODIFIED="1541198023064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$old_ProfileScreen.coverage" NAME="old_ProfileScreen Coverage Results" MODIFIED="1541271846261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$CapstoneGui.coverage" NAME="CapstoneGui Coverage Results" MODIFIED="1542059663065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Ollie" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_composite.coverage" NAME="list_composite Coverage Results" MODIFIED="1541966737298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$SQLite_test.coverage" NAME="SQLite_test Coverage Results" MODIFIED="1541886700611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration_Testing" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$test.coverage" NAME="test Coverage Results" MODIFIED="1541884336954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_kv.coverage" NAME="list_kv Coverage Results" MODIFIED="1541885317242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp__2_.coverage" NAME="GroceryLoggerApp (2) Coverage Results" MODIFIED="1543102956299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project_2$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1542507106069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Capstone_Project$studentdb.coverage" NAME="studentdb Coverage Results" MODIFIED="1541129118690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Profile Select" />
-    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp.coverage" NAME="GroceryLoggerApp Coverage Results" MODIFIED="1543448605283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Integration_Testing" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$scrollview.coverage" NAME="scrollview Coverage Results" MODIFIED="1541279743517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ProfileScreen.coverage" NAME="ProfileScreen Coverage Results" MODIFIED="1541451175960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing_Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$list_master_detail.coverage" NAME="list_master_detail Coverage Results" MODIFIED="1541966921485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLogger.coverage" NAME="GroceryLogger Coverage Results" MODIFIED="1541198023064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$ScreenManager.coverage" NAME="ScreenManager Coverage Results" MODIFIED="1541186535064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Testing _Aaron" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$fruit_detail_view.coverage" NAME="fruit_detail_view Coverage Results" MODIFIED="1541968159767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python36/share/kivy-examples/widgets/lists" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GroceryLoggerApp__1_.coverage" NAME="GroceryLoggerApp (1) Coverage Results" MODIFIED="1543441811187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$GUIApplication__1_.coverage" NAME="GUIApplication (1) Coverage Results" MODIFIED="1542066471313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Senior_Capstone_Project$Guimain10_13_18.coverage" NAME="Guimain10_13_18 Coverage Results" MODIFIED="1540350921540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -66,6 +61,17 @@
     </expand>
     <select />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1582798923">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
@@ -74,7 +80,7 @@
             <entry file="file://$PROJECT_DIR$/Integration_Testing/GroceryLoggerApp.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+                  <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -82,7 +88,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Integration_Testing/grocerylogger.kv">
               <provider selected="true" editor-type-id="text-editor">
@@ -193,6 +199,12 @@
         <option value="$PROJECT_DIR$/Integration_Testing/grocerylogger.kv" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="639" />
@@ -403,8 +415,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.20097245" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -480,20 +491,9 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GUI formatting and adding main menu screen" />
@@ -657,7 +657,7 @@
     <entry file="file://$PROJECT_DIR$/Integration_Testing/GroceryLoggerApp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
         </state>
       </provider>
     </entry>

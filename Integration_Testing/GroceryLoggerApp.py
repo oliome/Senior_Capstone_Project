@@ -144,7 +144,7 @@ class MyScreenManager(ScreenManager):
 
     def search_item(self, barcode_number):
         if barcode_number.text != '':
-            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=vwsib6fj958n3v9vtjt7sgtch7xclr')
+            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
             data = r.json()
             # displaying in json format
             item = data['products'][0]['product_name']
