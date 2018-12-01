@@ -146,11 +146,11 @@ class MyScreenManager(ScreenManager):
     def submit(self, month, day, year, barcode_number):
         if self.itemname.text == "":
             self.search_item(barcode_number)
-        array=[]
-        (array[0],array[1]) = self.search_item(self, barcode_number)
+        array=["","",""]
+        (array[0],array[1]) = self.search_item(barcode_number)
         array[2] = self.get_date(month, day, year)
         print(array)
-        #add_inventory(current_user, array)
+        add_inventory(current_user, array)
 
 
     def search_recipes(self):
