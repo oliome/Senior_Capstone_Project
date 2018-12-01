@@ -100,6 +100,9 @@
     grid1: grid_list
     itemname: itemname
     expdate: expdate
+    year: year
+    day: day
+    month: month
     
 #----------SPLASH SCREEN--------------------------------------------------
     Screen:
@@ -367,7 +370,7 @@
                 text: "Submit"
                 pos_hint: {"center_x": .4 , "center_y": .1}
                 on_press:
-                    root.submit()
+                    root.submit(month,day,year,barcode_number)
 
             Button:
                 font_size: 16
