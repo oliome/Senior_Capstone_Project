@@ -100,9 +100,6 @@
     grid1: grid_list
     itemname: itemname
     expdate: expdate
-    year: year
-    day: day
-    month: month
     
 #----------SPLASH SCREEN--------------------------------------------------
     Screen:
@@ -229,8 +226,10 @@
 #----------INVENTORY SCREEN----------------------------------------
     Screen:
         name:"inventory_screen"
-        on_enter: root.populate_inventory()
-        on_leave: root.depopulate_inventory()
+        on_enter: 
+            root.depopulate_inventory()
+            root.populate_inventory()
+
 
         FloatLayout:
             StandardButton:
