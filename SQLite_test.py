@@ -138,6 +138,18 @@ def add_inventory(name,item_info):
         cur = conn.cursor()
         cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+str(item_info[1])+",\""+str(item_info[0])+"\",\""+str(item_info[2])+"\")")
 
+def add_other_inventory(name,item_info):
+    """
+    Query tasks by priority
+    :param conn: the Connection object
+    :param name: name of profile wanted
+    :return:
+    """
+    conn = create_connection()
+    with conn:
+        cur = conn.cursor()
+        cur.execute("INSERT INTO "+str(name.lower())+"_db (item_name,exp) values (\""+str(item_info[0])+"\",\""+str(item_info[1])+"\")")
+
 def delete_inventory(name,item_name):
     """
     Query tasks by priority

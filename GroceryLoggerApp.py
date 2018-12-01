@@ -65,7 +65,7 @@ class MyScreenManager(ScreenManager):
 
     def populate_inventory(self,*args):
         print("populating inventory for "+current_user)
-        list_view= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
+        list_view= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='multiple'))
         self.grid1.add_widget(list_view)
 
     def depopulate_inventory(self):
@@ -120,20 +120,20 @@ class MyScreenManager(ScreenManager):
 
     def search_item(self, barcode_number):
         item = ""
-        r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
-        if (r.status_code == 200 or barcode_number.text != ''):
-            data = r.json()
-            # displaying in json format
-            item = data['products'][0]['product_name']
-            # grabbing the brand property from the products array. Debug for more info
-            self.ids.itemname.text = item
-            print(item)
-            print(barcode_number.text)
-        else:
-            invalid = "Invalid barcode or name"
-            self.ids.itemname.text = invalid
-            print(invalid)
+        if barcode_number.text != '':
+            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
+            if (r.status_code == 200 ):
+                data = r.json()
+                # displaying in json format
+                item = data['products'][0]['product_name']
+                # grabbing the brand property from the products array. Debug for more info
+                self.ids.itemname.text = item
+                return item, barcode_number.text
+            else:
+                self.ids.itemname.text = "Invalid barcode"
 
+        else:
+            self.ids.itemname.text = "Invalid barcode"
 
 
     def get_date(self, month, day, year):
@@ -158,6 +158,7 @@ class MyScreenManager(ScreenManager):
 
     def search_recipes(self):
         #if a list item is selected
+
         if self.grid1.children[0].adapter.selection[0]:
             selection = self.grid1.children[0].adapter.selection[0].text
             selection = selection.lstrip()
