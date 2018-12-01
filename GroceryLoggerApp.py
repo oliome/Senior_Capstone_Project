@@ -143,6 +143,9 @@ class MyScreenManager(ScreenManager):
         #if a list item is selected
         if self.grid1.children[0].adapter.selection[0]:
             selection = self.grid1.children[0].adapter.selection[0].text
+            selection = selection.lstrip()
+            selection = selection.split()
+            selection = selection[0]  
             App_ID = 'cf938db6'
             APP_KEY = '91a43a29d2211953084fcca6b71b005b'
             r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
