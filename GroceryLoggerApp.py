@@ -159,15 +159,35 @@ class MyScreenManager(ScreenManager):
         print(array)
         add_inventory(current_user, array)
 
+    def nameTaker(self,selected_inv):
+        temp=""
+        names=[]
+        for i in selected_inv:
+            j=0
+            temp=""
+            while(j<30):
+                if i[j]==' ' and i[j+1]==' ':
+                    break
+                temp+=i[j]
+                j+=1
+                print(j)
+            names.append(temp)
+        print(names)
+        return names
+            
+
 
     def search_recipes(self):
         #if a list item is selected
+        selected=[]
+        selection=""
         if self.grid1.children[0].adapter.selection:
-            if self.grid1.children[0].adapter.selection[0]:
-                selection = self.grid1.children[0].adapter.selection[0].text
-                selection = selection.lstrip()
-                selection = selection.split()
-                selection = selection[0]  
+            for i in self.grid1.children[0].adapter.selection:
+                selected.append(i.text)
+            selected=self.nameTaker(selected)
+            for j in selected:
+                selection=selection +" "+j
+            if (selection):
                 App_ID = 'cf938db6'
                 APP_KEY = '91a43a29d2211953084fcca6b71b005b'
                 r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
