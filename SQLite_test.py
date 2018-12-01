@@ -126,7 +126,7 @@ def select_inventory(name):
                 array.append(temp)
         return array
 
-def add_inventory(name,barcode,item_name,exp_date):
+def add_inventory(name,item_info):
     """
     Query tasks by priority
     :param conn: the Connection object
@@ -136,7 +136,7 @@ def add_inventory(name,barcode,item_name,exp_date):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+barcode+",\""+item_name+"\",\""+exp_date+"\")")
+        cur.execute("INSERT INTO "+str(name.lower())+"_db (barcode,item_name,exp) values ("+item_info[1]+",\""+item_info[0]+"\",\""+item_info[2]e+"\")")
 
 def select_profile_db(name):
     """
