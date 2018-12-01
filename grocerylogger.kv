@@ -98,6 +98,8 @@
 <MyScreenManager>:
     box2: box2
     grid1: grid_list
+    itemname: itemname
+    expdate: expdate
     
 #----------SPLASH SCREEN--------------------------------------------------
     Screen:
@@ -327,7 +329,7 @@
 
             Button:
 
-                text: "Enter Expiration Date (optional)"
+                text: "Enter Expiration Date"
                 pos_hint: {"center_x": .5, "top": .65}
                 size_hint: .6,.05
                 on_press:
@@ -364,6 +366,8 @@
                 size_hint: .1, .1
                 text: "Submit"
                 pos_hint: {"center_x": .4 , "center_y": .1}
+                on_press:
+                    root.submit()
 
             Button:
                 font_size: 16

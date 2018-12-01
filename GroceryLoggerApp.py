@@ -119,6 +119,7 @@ class MyScreenManager(ScreenManager):
 
 
     def search_item(self, barcode_number):
+        item = ""
         if barcode_number.text != '':
             r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=i35p2ky2g8uicz1palr2al0ndb1c2t')
             data = r.json()
@@ -126,18 +127,31 @@ class MyScreenManager(ScreenManager):
             item = data['products'][0]['product_name']
             # grabbing the brand property from the products array. Debug for more info
             self.ids.itemname.text = item
-            print(item)
-            print(barcode_number.text)
+            return item, barcode_number.text
+
         else:
-            print("no barcode entered")
+            return item, ""
+
 
     def get_date(self, month, day, year):
         if month.text == "Select Month" or day.text == "Select Day" or year.text == "Select Year":
-            print("Invalid Expiration Date")
-        else:
-            date = month.text+"/"+day.text+"/"+year.text
+            date = "Invalid Expiration Date"
             self.ids.expdate.text = date
             print(date)
+        else:
+            date = year.text+"-"+month.text+"-"+day.text
+            self.ids.expdate.text = date
+            return date
+
+    def submit(self, month, day, year, barcode_number):
+        if self.itemname.text == "":
+            self.search_item(barcode_number)
+        array=[]
+        (array[0],array[1]) = self.search_item(self, barcode_number)
+        array[2] = self.get_date(month, day, year)
+        print(array)
+        #add_inventory(current_user, array)
+
 
     def search_recipes(self):
         #if a list item is selected
