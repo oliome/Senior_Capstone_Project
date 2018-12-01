@@ -30,7 +30,7 @@ class MessageBox(Popup):
 #instance is the last button added
 class MyScreenManager(ScreenManager):
     added_buttons = ListProperty([])
-    item_list = ObjectProperty()
+    list_view = ObjectProperty()
     box2 = ObjectProperty(None)
 
     def __init__(self,*args, **kwargs):
@@ -62,8 +62,8 @@ class MyScreenManager(ScreenManager):
 
     def populate_inventory(self,*args):
         print("populating inventory for "+current_user)
-        newView= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
-        self.grid1.add_widget(newView)
+        list_view= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='single'))
+        self.grid1.add_widget(list_view)
 
     def depopulate_inventory(self):
         for i in self.grid1.children:
@@ -134,8 +134,8 @@ class MyScreenManager(ScreenManager):
 
     def search_recipes(self):
         #if a list item is selected
-        if self.item_list.adapter.selection:
-            selection = self.item_list.adapter.selection[0].text
+        if self.grid1.children[0].adapter.selection[0]:
+            selection = self.grid1.children[0].adapter.selection[0].text
             App_ID = 'cf938db6'
             APP_KEY = '91a43a29d2211953084fcca6b71b005b'
             r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)

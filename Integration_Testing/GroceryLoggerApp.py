@@ -86,7 +86,7 @@ class MyScreenManager(ScreenManager):
         return select_inventory(current_user)
 
     def populate(self):
-        self.rv.data = [{'value': str(x)} for x in {'item1','item2','item3','item4','item5'}]
+        self.rv.data = [{'value': str(x)} for x in select_inventory(current_user)]
 
     def depopulate(self):
         self.rv.data = []
