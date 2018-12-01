@@ -115,7 +115,7 @@ class MyScreenManager(ScreenManager):
         global current_user
         current_user = instance
         self.ids.bannerbutton.text = "Welcome " + instance + "!"
-        self.ids.expirationbutton.text = "You have "+str(count_exp(current_user))+ " items expiring soon!"
+        self.ids.expirationbutton.text = "You have "+str(count_exp(current_user))+ " items expiring this week!"
 
 
     def search_item(self, barcode_number):
