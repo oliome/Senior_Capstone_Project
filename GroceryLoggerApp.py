@@ -18,6 +18,10 @@ my_list = select_all_profiles()
 item_list = ObjectProperty()
 global current_user
 current_user=""
+q=0
+listofrecname=[]
+listofrecs=[]
+recindex=0
 
 class ItemListButton(ListItemButton):
     pass
@@ -158,28 +162,36 @@ class MyScreenManager(ScreenManager):
 
     def search_recipes(self):
         #if a list item is selected
+        if self.grid1.children[0].adapter.selection:
+            if self.grid1.children[0].adapter.selection[0]:
+                selection = self.grid1.children[0].adapter.selection[0].text
+                selection = selection.lstrip()
+                selection = selection.split()
+                selection = selection[0]  
+                App_ID = 'cf938db6'
+                APP_KEY = '91a43a29d2211953084fcca6b71b005b'
+                r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
+                if (r.status_code == 200):
+                    data = r.json()
+                    global listofrecname
+                    global listofrecs
+                    global recindex 
+                    for i in data['hits']:
+                        print('**')
+                        print('**')
+                        data1 = i['recipe']
+                        dishName = data1['label']
+                        print('Recipe for '+dishName)
+                        listofrecname.append('Recipe for '+dishName) 
+                        # prints ingredients needs to print recipe, popup content box layout including label and lable = data, right arror index + 1, left arrow index -1 if index = 0, left arrow == last element of array vise versa..!! change ingredients line
+                        recipeforpop = "" 
+                        for recipe in data1['ingredientLines']:
+                            #print(recipe) 
+                            recipeforpop+=recipe+'\n'
+                        listofrecs.append(recipeforpop)
+                        recindex+=1
 
-        if self.grid1.children[0].adapter.selection[0]:
-            selection = self.grid1.children[0].adapter.selection[0].text
-            selection = selection.lstrip()
-            selection = selection.split()
-            selection = selection[0]  
-            App_ID = 'cf938db6'
-            APP_KEY = '91a43a29d2211953084fcca6b71b005b'
-            r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
-            if (r.status_code == 200):
-                data = r.json()
-                for i in data['hits']:
-                    print('*****************************')
-                    print('*****************************')
-                    data1 = i['recipe']
-                    dishName = data1['label']
-                    print('Recipe for '+dishName)
-                    # prints ingredients needs to print recipe, popup content box layout including label and lable = data, right arror index + 1, left arrow index -1 if index = 0, left arrow == last element of array vise versa..!! change ingredients line
-                    for recipe in data1['ingredientLines']:
-                        print(recipe)  
-            else:
-                print ('incorrect item for recipe search')
+
 #On submit, pass the data in the spinners for the experation dates, easily done imo, errors could arise in passing from class to class
   
 class GroceryLoggerApp(App):
