@@ -290,28 +290,31 @@
         on_enter: root.PopText()
         FloatLayout
             size: root.size
-            Label:
+            HeaderButton:
                 id: recipename
                 pos_hint: {"top":1}
                 text:"Recipe Name"
             Label:
-                pos_hint: {"center_x": .5, "top": .9}
+                halign: 'center'
+                valign: 'center'
+                text_size: self.size
+                pos_hint: {"center_x": .5}
                 id: ingredients
                 text:"Ingredients"
             Button:
                 text: "<--"
                 size_hint: .2,.15
-                pos_hint: {"center_x": .25, "top": 1}
+                pos_hint: {"center_x": .25, "top": .95}
                 on_press: root.LeftPopText()
             Button:
                 text: "Back to Inventory"
                 size_hint: .2,.15
-                pos_hint: {"center_x": .5, "top": 1}
+                pos_hint: {"center_x": .5, "top": .95}
                 on_press: root.current = "inventory_screen"
             Button:
                 text: "-->"
                 size_hint: .2,.15
-                pos_hint: {"center_x": .75, "top": 1}
+                pos_hint: {"center_x": .75, "top": .95}
                 on_press: root.RightPopText()
 #----------ADD ITEM SCREEN--------------------------------------------------
     Screen:
