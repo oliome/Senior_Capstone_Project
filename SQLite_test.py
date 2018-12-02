@@ -105,13 +105,23 @@ def select_inventory(name):
     
         rows = cur.fetchall()
         array=[]
+        max_len=0
+        for row in rows:
+                if len(row[1]) > max_len:
+                        max_len=len(row[1])
         for row in rows:
                 temp=str(row[1])
                 x=0
                 pad=" "
                 length= len(temp)
-                temp=temp+(pad*(58-length-int(length/2)-2))
-                temp=temp+str(row[2])+pad*(48-int(length/2)+3)+str(row[0])
+                
+
+                while x <= (58-length):
+                        temp= temp+pad
+                        x+=1
+                temp=temp+str(row[2])+pad*48+str(row[0])
+                if length < max_len:
+                        temp=temp+(pad*(max_len-length))
                 array.append(temp)
         return array
 
@@ -149,7 +159,7 @@ def delete_inventory(name,item_name):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("DELETE FROM "+str(name.lower())+" WHERE item_name=\""+item_name+"\"")
+        cur.execute("DELETE FROM "+str(name.lower())+"_db WHERE item_name=\""+item_name+"\"")
 
 def select_profile_db(name):
     """

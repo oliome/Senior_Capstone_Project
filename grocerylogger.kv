@@ -269,6 +269,8 @@
             MiniButton:
                 text: "Delete"
                 pos_hint: {"center_x": .35 , "center_y": .1}
+                on_press:
+                    root.delete_items()
 
             StandardButton:
                 id: search

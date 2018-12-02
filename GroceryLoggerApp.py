@@ -188,7 +188,11 @@ class MyScreenManager(ScreenManager):
         for i in selected_inv:
             j=0
             temp=""
-            while(j<30):
+            i.strip()
+            print(i)
+            i.strip()
+            print(i)
+            while(j<100):
                 if i[j]==' ' and i[j+1]==' ':
                     break
                 temp+=i[j]
@@ -197,7 +201,17 @@ class MyScreenManager(ScreenManager):
         print(names)
         return names
             
-
+    def delete_items(self):
+        selected=[]
+        if len(self.grid1.children[0].adapter.selection)>0:
+            for i in self.grid1.children[0].adapter.selection:
+                selected.append(i.text)
+            print(selected)
+            selected=self.nameTaker(selected)
+            for i in selected:
+                delete_inventory(current_user,i)
+            self.depopulate_inventory()
+            self.populate_inventory()
 
     def search_recipes(self):
         #if a list item is selected
