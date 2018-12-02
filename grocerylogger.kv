@@ -43,24 +43,38 @@
     size_hint: .2, .1
 
 <OtherItems@Popup>:
+    id: other_popup
     size_hint: .6, .5
     auto_dismiss: False
     title: "Add Other Item"
     title_align: "center"
+    itemname: itemname
+    itemtext: itemtext
+    expdatepop: expdatepop
+    year: year
+    day: day
+    month: month
+#    on_enter: root.ids.itemtext.focus = True
+#    on_leave: root.ids.itemname.text = ''
+#    on_leave: root.ids.expdate.text = ''
+
     FloatLayout
         TextInput:
+            id: itemtext
             hint_text: "Enter Other Item Name"
             write_tab: False
             multiline: False
             pos_hint: {"center_x": .5, "top": 1}
             size_hint: .9,.15
         Button:
-
-            text: "Enter Expiration Date (optional)"
+            id: expdatepop
+            text: "Enter Expiration Date"
             pos_hint: {"center_x": .5, "top": .85}
             size_hint: .9,.15
-#            on_press:
-#                root.get_date(month, day, year)
+            on_press:
+                root.get_name(itemtext)
+            on_press:
+                root.get_date_pop(month, day, year)
 
         Spinner:
             id: year
@@ -83,11 +97,23 @@
             size_hint: .3,.15
             values: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
 
+        Label:
+            id: itemname
+            pos_hint: {"center_x": .5, "top": .95}
+            text: ""
+
+        Label:
+            id: expdatepop
+            pos_hint: {"center_x": .5, "top": .8}
+            text: ""
+
         Button:
             text: "Submit"
             size_hint: .4,.15
             pos_hint: {"center_x": .25, "top": .15}
-            on_press: root.current = "inventory_screen"
+            on_press:
+                root.submit_other(month,day,year)
+                root.dismiss()
 
         Button:
             text: "Cancel"
@@ -278,7 +304,7 @@
                 pos_hint: {"center_x": .5, "center_y": .1}
                 on_press:
                     app.root.search_recipes()
-                    root.current = "recipescreen"
+                   # root.current = "recipescreen"
 
             MiniButton:
                 text: "Add"
@@ -405,6 +431,8 @@
                 pos_hint: {"center_x": .4 , "center_y": .1}
                 on_press:
                     root.submit(month,day,year,barcode_number)
+#                    root.ids.barcode_number.focus = True
+#                    root.ids.barcode_number.text = ""
 
             Button:
                 font_size: 16
