@@ -193,7 +193,6 @@ class MyScreenManager(ScreenManager):
                     break
                 temp+=i[j]
                 j+=1
-                print(j)
             names.append(temp)
         print(names)
         return names
@@ -225,8 +224,8 @@ class MyScreenManager(ScreenManager):
                     global q
                     q = 0
                     for i in data['hits']:
-                        print('**')
-                        print('**')
+                        print('******************')
+                        print('******************')
                         data1 = i['recipe']
                         dishName = data1['label']
                         print('Recipe for '+dishName)
@@ -236,7 +235,7 @@ class MyScreenManager(ScreenManager):
                         recipeforpop = "" 
                         
                         for recipe in data1['ingredientLines']:
-                            #print(recipe) 
+                            print(recipe) 
                             recipeforpop+=recipe+'\n'
                         listofrecs.append(recipeforpop)
                         
