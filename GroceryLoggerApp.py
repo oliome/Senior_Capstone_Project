@@ -170,7 +170,6 @@ class MyScreenManager(ScreenManager):
                     break
                 temp+=i[j]
                 j+=1
-                print(j)
             names.append(temp)
         print(names)
         return names
@@ -197,8 +196,8 @@ class MyScreenManager(ScreenManager):
                     global listofrecs
                     global recindex 
                     for i in data['hits']:
-                        print('**')
-                        print('**')
+                        print('******************')
+                        print('******************')
                         data1 = i['recipe']
                         dishName = data1['label']
                         print('Recipe for '+dishName)
@@ -206,7 +205,7 @@ class MyScreenManager(ScreenManager):
                         # prints ingredients needs to print recipe, popup content box layout including label and lable = data, right arror index + 1, left arrow index -1 if index = 0, left arrow == last element of array vise versa..!! change ingredients line
                         recipeforpop = "" 
                         for recipe in data1['ingredientLines']:
-                            #print(recipe) 
+                            print(recipe) 
                             recipeforpop+=recipe+'\n'
                         listofrecs.append(recipeforpop)
                         recindex+=1
