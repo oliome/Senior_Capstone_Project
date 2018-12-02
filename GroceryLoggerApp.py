@@ -32,7 +32,44 @@ class MessageBox(Popup):
         self.obj = obj
 
 class OtherItems(Popup):
-    pass
+    def get_name(self, itemtext):
+        item = ""
+        if itemtext.text == "":
+            item = "Invalid Item Name"
+            self.ids.itemname.text = item
+            print(item)
+        else:
+            item = itemtext.text
+            self.ids.itemname.text = item
+            return item
+
+    def get_date_pop(self, month, day, year):
+        if month.text == "Select Month" or day.text == "Select Day" or year.text == "Select Year":
+            date = "Invalid Expiration Date"
+            self.ids.expdatepop.text = date
+            print(date)
+        else:
+            date = year.text+"-"+month.text+"-"+day.text
+            self.ids.expdatepop.text = date
+            print(date)
+            return date
+
+    def submit_other(self, month, day, year):
+
+        array=["",""]
+        array[0] = self.get_name(self.itemtext)
+        array[1] = self.get_date_pop(month, day, year)
+        print(array)
+        add_other_inventory(current_user, array)
+
+        # if self.itemname.text == "":
+        #     self.search_item(barcode_number)
+        # array=["","",""]
+        # (array[0],array[1]) = self.search_item(barcode_number)
+        # array[2] = self.get_date(month, day, year)
+        # print(array)
+        # add_inventory(current_user, array)
+
 
 #instance is the last button added
 class MyScreenManager(ScreenManager):
@@ -173,6 +210,8 @@ class MyScreenManager(ScreenManager):
             self.ids.expdate.text = date
             return date
 
+
+
     def submit(self, month, day, year, barcode_number):
         if self.itemname.text == "":
             self.search_item(barcode_number)
@@ -197,6 +236,8 @@ class MyScreenManager(ScreenManager):
         print(names)
         return names
             
+
+
 
 
     def search_recipes(self):
