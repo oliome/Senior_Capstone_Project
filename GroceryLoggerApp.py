@@ -37,7 +37,7 @@ class OtherItems(Popup):
         if itemtext.text == "":
             item = "Invalid Item Name"
             self.ids.itemname.text = item
-            print(item)
+
         else:
             item = itemtext.text
             self.ids.itemname.text = item
@@ -47,28 +47,19 @@ class OtherItems(Popup):
         if month.text == "Select Month" or day.text == "Select Day" or year.text == "Select Year":
             date = "Invalid Expiration Date"
             self.ids.expdatepop.text = date
-            print(date)
+
         else:
             date = year.text+"-"+month.text+"-"+day.text
             self.ids.expdatepop.text = date
-            print(date)
             return date
 
     def submit_other(self, month, day, year):
-
-        array=["",""]
-        array[0] = self.get_name(self.itemtext)
-        array[1] = self.get_date_pop(month, day, year)
-        print(array)
-        add_other_inventory(current_user, array)
-
-        # if self.itemname.text == "":
-        #     self.search_item(barcode_number)
-        # array=["","",""]
-        # (array[0],array[1]) = self.search_item(barcode_number)
-        # array[2] = self.get_date(month, day, year)
-        # print(array)
-        # add_inventory(current_user, array)
+        if self.get_name(self.itemtext):
+            array=["",""]
+            array[0] = self.get_name(self.itemtext)
+            array[1] = self.get_date_pop(month, day, year)
+            add_other_inventory(current_user, array)
+            self.dismiss()
 
 
 #instance is the last button added
@@ -90,7 +81,6 @@ class MyScreenManager(ScreenManager):
         self.added_buttons.append(newbutton)
 
     def show_inventory(self):
-        print(current_user)
         return select_inventory(current_user)
 
 
@@ -105,7 +95,6 @@ class MyScreenManager(ScreenManager):
         popup.dismiss()
 
     def populate_inventory(self,*args):
-        print("populating inventory for "+current_user)
         list_view= ListView(id="list_view", adapter= ListAdapter(data=select_inventory(current_user), cls=ItemListButton, selection_mode='multiple'))
         self.grid1.add_widget(list_view)
 
@@ -145,21 +134,13 @@ class MyScreenManager(ScreenManager):
 
     def update_buttons(self):
 
-        #self.box2.clear_widgets()
-        #shuffle(self.added_buttons)
         add_user = Button(text="Add New Profile")
         add_user.bind(on_press = self.create)
-        #self.box2.add_widget(add_user)
         for i in self.added_buttons:
             name = i.text
-            print(i.text)
             if (name not in select_all_profiles()):
                 create_profile(name)
-        #for j in select_all_profiles():
-         #   newbutton = Button(text=j, id = j)
-          #  newbutton.bind(on_press = partial(lambda a:self.auth(j)))
-           # self.box2.add_widget(newbutton)
-            #self.added_buttons.append(newbutton)
+
         for j in self.added_buttons:
             name = j.text
             j.bind(on_press= partial(lambda a:self.auth(name)))
@@ -185,7 +166,7 @@ class MyScreenManager(ScreenManager):
     def search_item(self, barcode_number):
         item = ""
         if barcode_number.text != '':
-            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=gjzaomoavp69xs0wysa1na5tqwg3hd')
+            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=q8fh4cx9v6qkwu3d1oh8mo4axf2g0m')
             if (r.status_code == 200 ):
                 data = r.json()
                 # displaying in json format
@@ -204,7 +185,6 @@ class MyScreenManager(ScreenManager):
         if month.text == "Select Month" or day.text == "Select Day" or year.text == "Select Year":
             date = "Invalid Expiration Date"
             self.ids.expdate.text = date
-            print(date)
         else:
             date = year.text+"-"+month.text+"-"+day.text
             self.ids.expdate.text = date
@@ -215,11 +195,12 @@ class MyScreenManager(ScreenManager):
     def submit(self, month, day, year, barcode_number):
         if self.itemname.text == "":
             self.search_item(barcode_number)
-        array=["","",""]
-        (array[0],array[1]) = self.search_item(barcode_number)
-        array[2] = self.get_date(month, day, year)
-        print(array)
-        add_inventory(current_user, array)
+        if self.get_date(month,day,year):
+            array=["","",""]
+            (array[0],array[1]) = self.search_item(barcode_number)
+            array[2] = self.get_date(month, day, year)
+            add_inventory(current_user, array)
+            self.ids.barcode_number.text = ""
 
     def nameTaker(self,selected_inv):
         temp=""
@@ -228,16 +209,12 @@ class MyScreenManager(ScreenManager):
             j=0
             temp=""
             i.strip()
-            print(i)
-            i.strip()
-            print(i)
             while(j<100):
                 if i[j]==' ' and i[j+1]==' ':
                     break
                 temp+=i[j]
                 j+=1
             names.append(temp)
-        print(names)
         return names
             
     def delete_items(self):
@@ -245,7 +222,6 @@ class MyScreenManager(ScreenManager):
         if len(self.grid1.children[0].adapter.selection)>0:
             for i in self.grid1.children[0].adapter.selection:
                 selected.append(i.text)
-            print(selected)
             selected=self.nameTaker(selected)
             for i in selected:
                 delete_inventory(current_user,i)
@@ -279,18 +255,14 @@ class MyScreenManager(ScreenManager):
                     global q
                     q = 0
                     for i in data['hits']:
-                        print('******************')
-                        print('******************')
                         data1 = i['recipe']
                         dishName = data1['label']
-                        print('Recipe for '+dishName)
                         listofrecname.append('Recipe for '+dishName) 
                         recindex+=1
                         # prints ingredients needs to print recipe, popup content box layout including label and lable = data, right arror index + 1, left arrow index -1 if index = 0, left arrow == last element of array vise versa..!! change ingredients line
                         recipeforpop = "" 
                         
                         for recipe in data1['ingredientLines']:
-                            print(recipe) 
                             recipeforpop+=recipe+'\n'
                         listofrecs.append(recipeforpop)
                         self.current = "recipescreen"

@@ -86,8 +86,7 @@ def count_exp(name):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("SELECT COUNT(*) FROM `"+str(name.lower())+"_db` WHERE exp > date('now', '+7 days');")
-    
+        cur.execute("SELECT COUNT(*) FROM `"+str(name.lower())+"_db` WHERE exp < date('now', '+7 days');")
         rows = cur.fetchall()
         return rows[0][0]
 
@@ -132,6 +131,7 @@ def add_inventory(name,item_info):
     :param name: name of profile wanted
     :return:
     """
+    
     conn = create_connection()
     with conn:
         cur = conn.cursor()
@@ -159,7 +159,7 @@ def delete_inventory(name,item_name):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("DELETE FROM "+str(name.lower())+"_db WHERE item_name=\""+item_name+"\"")
+        cur.execute("DELETE FROM "+str(name.lower())+"_db WHERE item_name LIKE '%"+item_name+"%'")
 
 def select_profile_db(name):
     """

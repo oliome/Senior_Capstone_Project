@@ -113,7 +113,6 @@
             pos_hint: {"center_x": .25, "top": .15}
             on_press:
                 root.submit_other(month,day,year)
-                root.dismiss()
 
         Button:
             text: "Cancel"
@@ -431,8 +430,9 @@
                 pos_hint: {"center_x": .4 , "center_y": .1}
                 on_press:
                     root.submit(month,day,year,barcode_number)
-#                    root.ids.barcode_number.focus = True
 #                    root.ids.barcode_number.text = ""
+                on_release:
+                    root.ids.barcode_number.focus = True
 
             Button:
                 font_size: 16
