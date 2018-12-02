@@ -85,13 +85,14 @@ class MyScreenManager(ScreenManager):
         global listofrecs
         global q
         
+        
         self.ids.recipename.text = listofrecname[q]
         self.ids.ingredients.text = listofrecs[q]
 
     def RightPopText(self):
         global q
         global recindex
-        if(q==9):
+        if(q==recindex-1):
             q=0
         else:
             q+=1
@@ -100,7 +101,7 @@ class MyScreenManager(ScreenManager):
     def LeftPopText(self):
         global q
         if(q==0):
-            q=9
+            q=recindex-1
         else:
             q-=1
         self.PopText()
@@ -216,8 +217,13 @@ class MyScreenManager(ScreenManager):
                 if (r.status_code == 200):
                     data = r.json()
                     global listofrecname
+                    listofrecname = []
                     global listofrecs
-                    global recindex 
+                    listofrecs = []
+                    global recindex
+                    recindex = 0
+                    global q
+                    q = 0
                     for i in data['hits']:
                         print('**')
                         print('**')
@@ -225,13 +231,15 @@ class MyScreenManager(ScreenManager):
                         dishName = data1['label']
                         print('Recipe for '+dishName)
                         listofrecname.append('Recipe for '+dishName) 
+                        recindex+=1
                         # prints ingredients needs to print recipe, popup content box layout including label and lable = data, right arror index + 1, left arrow index -1 if index = 0, left arrow == last element of array vise versa..!! change ingredients line
                         recipeforpop = "" 
+                        
                         for recipe in data1['ingredientLines']:
                             #print(recipe) 
                             recipeforpop+=recipe+'\n'
                         listofrecs.append(recipeforpop)
-                        recindex+=1
+                        
 
 
 #On submit, pass the data in the spinners for the experation dates, easily done imo, errors could arise in passing from class to class
