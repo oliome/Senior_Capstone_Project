@@ -159,7 +159,7 @@ def delete_inventory(name,item_name):
     conn = create_connection()
     with conn:
         cur = conn.cursor()
-        cur.execute("DELETE FROM "+str(name.lower())+"_db WHERE item_name LIKE '%"+item_name+"%'")
+        cur.execute("DELETE FROM "+str(name.lower())+"_db WHERE item_name LIKE \"%"+item_name+"%\"")
 
 def select_profile_db(name):
     """
