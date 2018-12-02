@@ -279,8 +279,8 @@ class MyScreenManager(ScreenManager):
                             print(recipe) 
                             recipeforpop+=recipe+'\n'
                         listofrecs.append(recipeforpop)
-                        
-
+                        self.current = "recipescreen"
+                   
 
 #On submit, pass the data in the spinners for the experation dates, easily done imo, errors could arise in passing from class to class
   
