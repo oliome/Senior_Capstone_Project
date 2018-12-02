@@ -167,7 +167,7 @@ class MyScreenManager(ScreenManager):
         item = ""
         if barcode_number.text != '':
             if barcode_number.text.isdigit():
-                if (len(barcode_number.text) == 7):
+                if (len(barcode_number.text) == 12):
                     r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=q8fh4cx9v6qkwu3d1oh8mo4axf2g0m')
                     if (r.status_code == 200 ):
                         data = r.json()
