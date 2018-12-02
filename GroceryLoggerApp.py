@@ -80,8 +80,30 @@ class MyScreenManager(ScreenManager):
     def create(self,*args):
         self.current = "create_profile_screen"
 
+    def PopText(self):
+        global listofrecname
+        global listofrecs
+        global q
+        
+        self.ids.recipename.text = listofrecname[q]
+        self.ids.ingredients.text = listofrecs[q]
 
+    def RightPopText(self):
+        global q
+        global recindex
+        if(q==9):
+            q=0
+        else:
+            q+=1
+        self.PopText()
 
+    def LeftPopText(self):
+        global q
+        if(q==0):
+            q=9
+        else:
+            q-=1
+        self.PopText()
 
     def update_buttons(self):
 
