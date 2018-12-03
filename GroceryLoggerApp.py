@@ -246,8 +246,8 @@ class MyScreenManager(ScreenManager):
             for j in selected:
                 selection=selection +" "+j
             if (selection):
-                App_ID = 'cf938db6'
-                APP_KEY = '91a43a29d2211953084fcca6b71b005b'
+                App_ID = '48dd6ace'
+                APP_KEY = '792db8b69a132ff3de7497cc704b6b46'
                 r = requests.get('https://api.edamam.com/search?q='+selection +'&app_id='+App_ID+'&app_key='+APP_KEY)
                 if (r.status_code == 200):
                     data = r.json()
