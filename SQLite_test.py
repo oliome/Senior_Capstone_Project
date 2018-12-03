@@ -113,14 +113,28 @@ def select_inventory(name):
                 x=0
                 pad=" "
                 length= len(temp)
-                
+                if length < max_len:
+                        temp=(pad*(max_len-length)*2)+temp
+                if length== max_len:
+                        temp=(pad*(40-length))+temp
 
-                while x <= (58-length):
+                while x <= (40-length+max_len):
                         temp= temp+pad
                         x+=1
-                temp=temp+str(row[2])+pad*48+str(row[0])
+                temp=temp+str(row[2])
+                if len(str(row[2]))<5:
+                        temp=temp+pad*(12-len(str(row[2])))
+                        temp=pad*(int(length/2)*int(max_len/length))+temp
+                temp=temp+pad*48+str(row[0])
+                if len(str(row[2]))<5:
+                        temp=temp+pad*(len(temp)-230)
+                if len(str(row[0]))<9:
+                        temp=temp+pad*(20-len(str(row[0])))
                 if length < max_len:
-                        temp=temp+(pad*(max_len-length))
+                        temp=temp+(pad*((max_len-length)+length))
+                if length == max_len:
+                        temp=temp+pad*(40-length)
+                temp=temp+pad*(max_len)
                 array.append(temp)
         return array
 

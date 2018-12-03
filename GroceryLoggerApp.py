@@ -166,22 +166,17 @@ class MyScreenManager(ScreenManager):
     def search_item(self, barcode_number):
         item = ""
         if barcode_number.text != '':
-            if barcode_number.text.isdigit():
-                if (len(barcode_number.text) == 12):
-                    r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=q8fh4cx9v6qkwu3d1oh8mo4axf2g0m')
-                    if (r.status_code == 200 ):
-                        data = r.json()
-                        # displaying in json format
-                        item = data['products'][0]['product_name']
-                        # grabbing the brand property from the products array. Debug for more info
-                        self.ids.itemname.text = item
-                        return item, barcode_number.text
-                    else:
-                        self.ids.itemname.text = "Invalid barcode"
-                else:
-                     self.ids.itemname.text = 'Barcode number enetered is not 7 digits long'       
+            r = requests.get(r'https://api.barcodelookup.com/v2/products?barcode='+barcode_number.text+'&formatted=y&key=q8fh4cx9v6qkwu3d1oh8mo4axf2g0m')
+            if (r.status_code == 200 ):
+                data = r.json()
+                # displaying in json format
+                item = data['products'][0]['product_name']
+                # grabbing the brand property from the products array. Debug for more info
+                self.ids.itemname.text = item
+                return item, barcode_number.text
             else:
-                self.ids.itemname.text = "Entered string is not a number"
+                self.ids.itemname.text = "Invalid barcode"
+
         else:
             self.ids.itemname.text = "Invalid barcode"
 
@@ -213,7 +208,7 @@ class MyScreenManager(ScreenManager):
         for i in selected_inv:
             j=0
             temp=""
-            i.strip()
+            i=i.strip()
             while(j<100):
                 if i[j]==' ' and i[j+1]==' ':
                     break
